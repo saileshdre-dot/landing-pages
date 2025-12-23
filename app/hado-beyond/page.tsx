@@ -353,7 +353,7 @@ export default function HadoBeyondPage() {
                   alt="HADO by Beyond"
                   width={100}
                   height={100}
-                  style={{ width: "100px", height: "auto", objectFit: "contain" }}
+                  style={{ width: "160px", height: "auto", objectFit: "contain" }}
                 />
                 <h1>6KM BEACH JAPANESE INSPIRED</h1>
                 <p>1-4BR LUXURY WATERFRONT APARTMENT</p>
