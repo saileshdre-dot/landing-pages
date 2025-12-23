@@ -356,8 +356,8 @@ export default function HadoBeyondPage() {
                   height={100}
                   style={{ width: "160px", height: "auto", objectFit: "contain" }}
                 />
-                <h1>6KM BEACH JAPANESE INSPIRED</h1>
-                <p>1-4BR LUXURY WATERFRONT APARTMENT</p>
+                <h1> 6KM OCEAN VIEW JAPANESE INSPIRED LIVING</h1>
+                <p>1-4BR PRIVATE BEACH WATERFRONT APARTMENT</p>
                 <div className="buttons">
                   <button onClick={() => openFormModal("brochure")}>
                     <svg
@@ -395,13 +395,13 @@ export default function HadoBeyondPage() {
           <div className="container">
             <div className="meta_content_wrapper">
               <h2>
-                Miss This Data <br /> Miss The Best Investment
+              What You Don't Analyze Costs You More
               </h2>
               <button
                 onClick={() => setIsEnquiryModalOpen(true)}
                 className="get_callback_button"
               >
-                <span>GET THE REAL NUMBERS BEFORE YOU INVEST</span>
+                <span>GET THE DEEP INSIGHT BEFORE YOU INVEST</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
