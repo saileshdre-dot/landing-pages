@@ -70,13 +70,13 @@ export default function HadoBeyondPage() {
     const getModalHeading = () => {
       switch (modalType) {
         case "roi":
-          return "Only 17 premium units offering strong ROI potential. Share your WhatsApp number to receive full details within minutes";
+          return "View available units. Get project details on WhatsApp";
         case "brochure":
           return "DOWNLOAD HADO BY BEYOND BROCHURE...";
         case "layout":
-          return "Get HADO by Beyond's detailed floor plans and layouts. Share your WhatsApp number to receive the layouts within minutes.";
+          return "Get HADO by Beyond's layouts on WhatsApp.";
         default:
-          return "Only 17 premium units offering strong ROI potential. Share your WhatsApp number to receive full details within minutes";
+          return "View available units. Get project details on WhatsApp";
       }
     };
 
@@ -279,7 +279,7 @@ export default function HadoBeyondPage() {
                         scrollToSection("why-invest");
                       }}
                     >
-                      Why invest?
+                    Why This Project
                     </a>
                   </li>
                   <li>
@@ -391,8 +391,7 @@ export default function HadoBeyondPage() {
                     onClick={() => openFormModal("roi")}
                     className="call_to_action"
                   >
-                    {" "}
-                    Check Premium Units list
+                    Check Available Units
                   </button>
                 </div>
               </div>
@@ -404,28 +403,8 @@ export default function HadoBeyondPage() {
           <div className="meta_section_overlay"></div>
           <div className="container">
             <div className="meta_content_wrapper">
-              <h2>
-              What You Don't Analyze Costs You More
-              </h2>
-              <button
-                onClick={() => setIsEnquiryModalOpen(true)}
-                className="get_callback_button"
-              >
-                <span>GET THE DEEP INSIGHT BEFORE YOU INVEST</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-              </button>
+              
+            
               <div className="meta_row">
                 <div className="meta_item">
                   <div className="meta_icon_wrapper">
@@ -454,7 +433,7 @@ export default function HadoBeyondPage() {
                     </span>
                   </div>
                   <p className="value">2.4M AED</p>
-                  <p className="label">Starting Price</p>
+                  <p className="label">Price Start</p>
                 </div>
                 <div className="meta_item">
                   <div className="meta_icon_wrapper">
@@ -688,44 +667,13 @@ export default function HadoBeyondPage() {
                     </div>
                   </div>
   
-                  <div
-                    className={`accordion_item ${
-                      openAccordion === 4 ? "active" : ""
-                    }`}
-                  >
-                    <button
-                      className="accordion_header"
-                      onClick={() =>
-                        setOpenAccordion(openAccordion === 4 ? null : 4)
-                      }
-                    >
-                      <span>Stronger Investment Fundamentals</span>
-                      <span className="accordion_icon">
-                        {openAccordion === 4 ? "−" : "+"}
-                      </span>
-                    </button>
-                    <div className="accordion_content">
-                      <p>
-                        With a AED 2.4M entry point, limited supply, and growing
-                        demand in Dubai Islands, HADO offers:
-                      </p>
-                      <ul>
-                        <li>Higher rental appeal for lifestyle tenants</li>
-                        <li>Capital appreciation potential pre-handover</li>
-                        <li>Flexible 50/50 payment plan until Q3 2029</li>
-                      </ul>
-                      <p className="difference_note">
-                        <strong>Difference:</strong> Balanced appeal for end-users
-                        and investors.
-                      </p>
-                    </div>
-                  </div>
+                 
                 </div>
                 <button
                   className="roi_report_btn"
                   onClick={() => openFormModal("roi")}
                 >
-                  Download Full ROI Report
+                   FULL PROJECT DETAIL
                 </button>
               </div>
             </div>
@@ -779,7 +727,7 @@ export default function HadoBeyondPage() {
                   className="roi_report_btn"
                   onClick={() => openFormModal("roi")}
                 >
-                  Download Full ROI Report
+                   FULL PROJECT DETAIL
                 </button>
               </div>
               <div className="section_image">
@@ -1332,7 +1280,7 @@ export default function HadoBeyondPage() {
               quality, low-density planning, and long-term value creation, Beyond
               Developments delivers projects that combine modern living with
               thoughtful master planning. Their developments are positioned to
-              appeal to both end-users and investors seeking sustainable growth
+              appeal to both end-users and buyers seeking long-term ownership and premium waterfront living
               and premium waterfront living.
             </p>
   
@@ -1386,7 +1334,7 @@ export default function HadoBeyondPage() {
                 <div className="enquiry-form-content">
                   <h2 className="enquiry-section-title">Get in Touch</h2>
                   <p className="enquiry-section-subtitle">
-                    Direct Call Give You Exclusive Units <br /> & Better Price Act Fast
+                  Contact our advisor for available units and pricing details
                   </p>
                   <div className="enquiry_icons">
                     <a
@@ -1670,7 +1618,7 @@ export default function HadoBeyondPage() {
                   >
                     {isSubmitting
                       ? "Submitting..."
-                      : "Request Available unit list"}
+                      : "Request Available Units"}
                   </button>
                 </form>
               </div>
@@ -1887,7 +1835,7 @@ export default function HadoBeyondPage() {
           </a>
           <a href="tel:+971527543243" className="fixed_nav_item call_nav_item">
             <div className="call_popover">
-              <span>Direct call gives you premium units & Better price act fast</span>
+              <span>Call for available units and pricing details</span>
             </div>
             <div className="nav_icon call_icon_circle">
               <svg
