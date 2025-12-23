@@ -79,7 +79,17 @@ export default function HadoBeyondPage() {
           return "Only 17 premium units offering strong ROI potential. Share your WhatsApp number to receive full details within minutes";
       }
     };
-  
+
+    // Auto-open enquiry modal after 5 seconds when page loads
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        setIsEnquiryModalOpen(true);
+      }, 5000); // 5 seconds
+
+      // Cleanup timer on unmount
+      return () => clearTimeout(timer);
+    }, []);
+
     return (
       <>
         <header className="main_header">
