@@ -2473,6 +2473,7 @@ p, li {
   color: #555;
   line-height: 1.6;
   margin: 0 0 24px 0;
+  text-align: center;
 }
 
 .dld_link {
@@ -2485,12 +2486,13 @@ p, li {
   display: flex;
   justify-content: start;
   align-items: center;
+  flex-direction: column;
   gap: 12px;
 
 }
 .rera_qr_code img{
   width: 100%;
-  max-width: 100px;
+  max-width: 180px;
 }
 
 .qr_code_placeholder {

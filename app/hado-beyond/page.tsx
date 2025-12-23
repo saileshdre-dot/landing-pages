@@ -1931,7 +1931,7 @@ export default function HadoBeyondPage() {
                       style={{ width: "100%", height: "100%", objectFit: "contain" }}
                     />
                       <h3 className="rera_heading">
-                  RERA & DLD<br />Verified Project
+                  RERA & DLDVerified Project
                 </h3>
                 </div>
                 <div className="rera_content">
