@@ -377,7 +377,7 @@ export default function HadoBeyondPage() {
                   height={100}
                   style={{ width: "160px", height: "auto", objectFit: "contain" }}
                 />
-                <h1> 6KM OCEAN VIEW JAPANESE INSPIRED LIVING</h1>
+                <h1>6KM Waterfront Japanese-Inspired Living</h1>
                 <p>1-4BR PRIVATE BEACH WATERFRONT APARTMENT</p>
                 <div className="buttons">
                   <button onClick={() => openFormModal("brochure")}>

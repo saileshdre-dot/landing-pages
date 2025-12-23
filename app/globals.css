@@ -1559,8 +1559,8 @@ p, li {
 
 .form_modal_close {
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: 6px;
+  right: 6px;
   background: transparent;
   border: none;
   cursor: pointer;
