@@ -348,6 +348,13 @@ export default function HadoBeyondPage() {
           <div className="container">
             <div className="banner_content_wrapper">
               <div className="content_left">
+                <Image
+                  src="/images/hado-logo.png"
+                  alt="HADO by Beyond"
+                  width={100}
+                  height={100}
+                  style={{ width: "100px", height: "auto", objectFit: "contain" }}
+                />
                 <h1>6KM BEACH JAPANESE INSPIRED</h1>
                 <p>1-4BR LUXURY WATERFRONT APARTMENT</p>
                 <div className="buttons">
