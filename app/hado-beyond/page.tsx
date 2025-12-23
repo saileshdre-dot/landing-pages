@@ -351,6 +351,7 @@ export default function HadoBeyondPage() {
                 <Image
                   src="/images/hado-logo.png"
                   alt="HADO by Beyond"
+                  className="hado_logo"
                   width={100}
                   height={100}
                   style={{ width: "160px", height: "auto", objectFit: "contain" }}

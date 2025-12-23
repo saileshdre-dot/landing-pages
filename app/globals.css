@@ -3222,4 +3222,7 @@ p, li {
   .project_meta_section .get_callback_button svg{
     display: none;
   }
+  .hado_logo{
+    margin-inline: auto;
+  }
 }
