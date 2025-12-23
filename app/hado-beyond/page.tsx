@@ -70,7 +70,7 @@ export default function HadoBeyondPage() {
     const getModalHeading = () => {
       switch (modalType) {
         case "roi":
-          return "View available units. Get project details on WhatsApp";
+          return "Get full project details on WhatsApp";
         case "brochure":
           return "DOWNLOAD HADO BY BEYOND BROCHURE...";
         case "layout":
@@ -87,7 +87,7 @@ export default function HadoBeyondPage() {
         case "roi":
         case "layout":
         default:
-          return "Request Available Units";
+          return "Full project details";
       }
     };
 
@@ -1367,7 +1367,7 @@ export default function HadoBeyondPage() {
                       </svg>
                     </a>
                     <a
-                      href="https://wa.me/971527543243?text=Hello%2C%20I%20would%20like%20to%20receive%20complete%20details%20for%20this%20property%2C%20including%20premium%20unit%20availability%20and%20the%20best%20pricing."
+                      href="https://wa.me/971527543243?text=Hello%2C%20I%20would%20like%20to%20receive%20complete%20details%20for%20this%20property%2C%20including%20availability%20and%20the%20best%20pricing."
                       target="_blank"
                       rel="noopener noreferrer"
                       className="enquiry_icon_btn whatsapp_icon"
@@ -1667,7 +1667,7 @@ export default function HadoBeyondPage() {
               <div className="enquiry_modal_content">
                 <div className="enquiry_header">
                   <h3 className="enquiry_heading">
-                    Direct Call Give You Exclusive Units & Better Price Act Fast
+                  Contact our advisor for available units and pricing details
                   </h3>
                   <div className="enquiry_icons">
                     <a
@@ -1689,7 +1689,7 @@ export default function HadoBeyondPage() {
                       </svg>
                     </a>
                     <a
-                      href="https://wa.me/971527543243?text=Hello%2C%20I%20would%20like%20to%20receive%20complete%20details%20for%20this%20property%2C%20including%20premium%20unit%20availability%20and%20the%20best%20pricing."
+                      href="https://wa.me/971527543243?text=Hello%2C%20I%20would%20like%20to%20receive%20complete%20details%20for%20this%20property%2C%20including%20availability%20and%20the%20best%20pricing."
                       target="_blank"
                       rel="noopener noreferrer"
                       className="enquiry_icon_btn whatsapp_icon"
@@ -1822,7 +1822,7 @@ export default function HadoBeyondPage() {
         {/* Fixed Mobile Buttons */}
         <div className="fixed_mobile_buttons">
           <a
-            href="https://wa.me/971527543243?text=Hello%2C%20I%20would%20like%20to%20receive%20complete%20details%20for%20this%20property%2C%20including%20premium%20unit%20availability%20and%20the%20best%20pricing."
+            href="https://wa.me/971527543243?text=Hello%2C%20I%20would%20like%20to%20receive%20complete%20details%20for%20this%20property%2C%20including%20availability%20and%20the%20best%20pricing."
             target="_blank"
             rel="noopener noreferrer"
             className="fixed_nav_item"
