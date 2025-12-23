@@ -80,6 +80,17 @@ export default function HadoBeyondPage() {
       }
     };
 
+    const getModalButtonText = () => {
+      switch (modalType) {
+        case "brochure":
+          return "Request Brochure";
+        case "roi":
+        case "layout":
+        default:
+          return "Request Available Units";
+      }
+    };
+
     // Auto-open enquiry modal after 5 seconds when page loads
     useEffect(() => {
       const timer = setTimeout(() => {
@@ -1618,7 +1629,7 @@ export default function HadoBeyondPage() {
                   >
                     {isSubmitting
                       ? "Submitting..."
-                      : "Request Available Units"}
+                      : getModalButtonText()}
                   </button>
                 </form>
               </div>
