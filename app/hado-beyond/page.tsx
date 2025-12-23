@@ -1970,17 +1970,6 @@ export default function HadoBeyondPage() {
             </div>
           </div>
         </footer>
-
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-PLV22TTR"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          ></iframe>
-        </noscript>
-        {/* End Google Tag Manager (noscript) */}
       </>
     );
   }
