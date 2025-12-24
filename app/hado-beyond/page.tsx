@@ -378,7 +378,7 @@ export default function HadoBeyondPage() {
                   style={{ width: "160px", height: "auto", objectFit: "contain" }}
                 />
                 <h1>6KM Waterfront Japanese-Inspired Living</h1>
-                <p>1-4BR BEACH WATERFRONT APARTMENT</p>
+                <p>1-4BR BEACH WATERFRONT APARTMENT WITH BEACH ACCESS</p>
                 <div className="buttons">
                   <button onClick={() => openFormModal("brochure")}>
                     <svg
@@ -708,7 +708,7 @@ export default function HadoBeyondPage() {
                     <strong>Future-Ready Island Destination</strong>
                     <p>
                       Dubai Islands is one of the city's next major growth zones,
-                      offering early-mover advantage before full maturity.
+                      located within a developing master planned district.
                     </p>
                   </li>
                   <li>
