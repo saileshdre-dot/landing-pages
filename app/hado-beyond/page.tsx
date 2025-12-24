@@ -70,7 +70,7 @@ export default function HadoBeyondPage() {
     const getModalHeading = () => {
       switch (modalType) {
         case "roi":
-          return "Get full project details on WhatsApp";
+          return "Get project details on WhatsApp";
         case "brochure":
           return "DOWNLOAD HADO BY BEYOND BROCHURE...";
         case "layout":
@@ -87,7 +87,7 @@ export default function HadoBeyondPage() {
         case "roi":
         case "layout":
         default:
-          return "Full project details";
+          return "Project details";
       }
     };
 
@@ -146,7 +146,7 @@ export default function HadoBeyondPage() {
                       scrollToSection("why-invest");
                     }}
                   >
-                    Why invest
+                    Why This Project
                   </a>
                 </li>
                 <li>
@@ -378,7 +378,7 @@ export default function HadoBeyondPage() {
                   style={{ width: "160px", height: "auto", objectFit: "contain" }}
                 />
                 <h1>6KM Waterfront Japanese-Inspired Living</h1>
-                <p>1-4BR PRIVATE BEACH WATERFRONT APARTMENT</p>
+                <p>1-4BR BEACH WATERFRONT APARTMENT</p>
                 <div className="buttons">
                   <button onClick={() => openFormModal("brochure")}>
                     <svg
@@ -684,7 +684,7 @@ export default function HadoBeyondPage() {
                   className="roi_report_btn"
                   onClick={() => openFormModal("roi")}
                 >
-                   FULL PROJECT DETAIL
+                    PROJECT DETAIL
                 </button>
               </div>
             </div>
@@ -738,7 +738,7 @@ export default function HadoBeyondPage() {
                   className="roi_report_btn"
                   onClick={() => openFormModal("roi")}
                 >
-                   FULL PROJECT DETAIL
+                  PROJECT DETAIL
                 </button>
               </div>
               <div className="section_image">
@@ -1291,8 +1291,7 @@ export default function HadoBeyondPage() {
               quality, low-density planning, and long-term value creation, Beyond
               Developments delivers projects that combine modern living with
               thoughtful master planning. Their developments are positioned to
-              appeal to both end-users and buyers seeking long-term ownership and premium waterfront living
-              and premium waterfront living.
+              appeal to both end-users and buyers seeking long-term ownership and premium waterfront living.
             </p>
   
             <div className="key-highlights">
