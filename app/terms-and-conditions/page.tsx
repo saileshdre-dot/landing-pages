@@ -24,55 +24,103 @@ export default function TermsAndConditions() {
             <h1>Terms and Conditions</h1>
             
             <p>
-              Please be advised that accessing or utilizing the landing page implies the user's consent to abide by the following terms and conditions:
+              By accessing or using this landing page, you acknowledge and agree to comply with the following Terms and Conditions.
             </p>
 
-            <h2>Intellectual Property</h2>
+            <h2>1. Intellectual Property</h2>
 
             <p>
-              All content, images, logos, and other materials on this landing page are the property of respective project developer or its licensors. These properties are safeguarded by intellectual property laws, and users are expressly prohibited from copying, altering, distributing, or utilizing any content without obtaining prior written permission.
+              All content, including text, images, graphics, logos, layouts, and other materials displayed on this landing page are owned by the respective project developers or their licensors and are protected under applicable intellectual property laws.
             </p>
 
-            <h2>Property Information</h2>
-
             <p>
-              This landing page's content, which includes details of the properties, costs, and availability, is subject to change at any time. The Company is not responsible for any inaccuracies or omissions in the information provided.
+              No content may be copied, reproduced, modified, distributed, or used for commercial purposes without prior written consent from the rightful owner.
             </p>
 
-            <h2>User Obligations</h2>
+            <h2>2. Property Information Disclaimer</h2>
 
             <p>
-              Users are obligated to furnish accurate and current information when submitting inquiries or requests via the landing page. Additionally, users must commit to refraining from engaging in any unlawful or harmful activities, such as hacking, spamming, or transmitting malicious software.
+              All property details, prices, layouts, specifications, and availability provided on this landing page are for informational purposes only and are subject to change without prior notice.
             </p>
 
-            <h2>Privacy and Data Collection</h2>
-
             <p>
-              The Company may collect, store, and use your personal information in accordance with its privacy policy, which is available at <Link href="/privacy-policy">DRE HOMES REAL ESTATE BROKER</Link>. We may use third-party services or tracking technologies, such as cookies or analytics tools, to collect information about your use of this landing page.
+              While reasonable efforts are made to ensure accuracy, DRE Homes Real Estate Broker does not guarantee the completeness or correctness of the information displayed and shall not be held liable for any discrepancies or omissions.
             </p>
 
-            <h2>Disclaimer of Liability</h2>
+            <h2>3. User Responsibilities</h2>
 
             <p>
-              The Company explicitly disclaims liability for any damages, losses, or injuries arising from the use of the landing page or reliance on the provided information. This disclaimer extends to encompass, but is not limited to, financial losses, property damage, or any other direct or indirect damages.
+              Users agree to:
             </p>
 
-            <h2>Links to Third-Party Websites</h2>
+            <ul>
+              <li>Provide accurate and up-to-date information when submitting inquiries</li>
+              <li>Use this landing page only for lawful purposes</li>
+              <li>Refrain from activities such as hacking, spamming, data scraping, or transmitting malicious software</li>
+            </ul>
 
             <p>
-              This landing page may contain links to external websites or resources. We do not endorse or assume responsibility for the content, privacy practices, or availability of those third-party sites.
+              Any misuse of the platform may result in restricted access.
             </p>
 
-            <h2>Modifications to the Terms</h2>
+            <h2>4. Privacy & Data Collection</h2>
 
             <p>
-              The Company may update or modify these terms and conditions at any time without prior notice. We encourage you to review these terms periodically to stay informed about any changes.
+              Personal information submitted through this landing page will be collected and processed in accordance with our <Link href="/privacy-policy">Privacy Policy</Link>.
             </p>
 
-            <h2>Governing Law and Jurisdiction</h2>
+            <p>
+              We may use cookies, analytics tools, or third-party services to improve user experience and monitor website performance.
+            </p>
+
+            <h2>5. Limitation of Liability</h2>
 
             <p>
-              Any legal disputes arising from your use of this landing page will be governed by the laws of the State of Maharashtra and will be resolved in the courts of Mumbai.
+              DRE Homes Real Estate Broker shall not be liable for any direct, indirect, incidental, or consequential damages arising from:
+            </p>
+
+            <ul>
+              <li>Use of this landing page</li>
+              <li>Reliance on property information provided</li>
+              <li>Temporary unavailability or technical issues</li>
+            </ul>
+
+            <p>
+              All users access this website at their own discretion and risk.
+            </p>
+
+            <h2>6. Third-Party Links</h2>
+
+            <p>
+              This landing page may contain links to third-party websites for reference or convenience. We do not control, endorse, or assume responsibility for the content, availability, or privacy practices of such external websites.
+            </p>
+
+            <h2>7. Changes to Terms</h2>
+
+            <p>
+              We reserve the right to amend or update these Terms and Conditions at any time without prior notice. Continued use of this landing page constitutes acceptance of any revised terms.
+            </p>
+
+            <h2>8. Governing Law & Jurisdiction</h2>
+
+            <p>
+              These Terms and Conditions shall be governed by and interpreted in accordance with the laws of the United Arab Emirates.
+            </p>
+
+            <p>
+              Any disputes arising in connection with the use of this landing page shall be subject to the exclusive jurisdiction of the courts of Dubai, UAE.
+            </p>
+
+            <h2>9. Company Information</h2>
+
+            <p>
+              This landing page is operated by:
+            </p>
+
+            <p>
+              <strong>DRE Homes Real Estate Broker</strong><br />
+              A company registered in Dubai, United Arab Emirates<br />
+              RERA Licensed & Regulated
             </p>
           </div>
         </div>
