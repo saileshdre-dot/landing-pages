@@ -51,7 +51,7 @@ export default function ThankYouPage() {
                 Back to Home
               </Link>
               <a
-                href="https://wa.me/971527543243?text=Hello%2C%20I%20would%20like%20to%20receive%20complete%20details%20for%20this%20property%2C%20including%20premium%20unit%20availability%20and%20the%20best%20pricing."
+                href="https://wa.me/971527543243?text=Hello%2C%20I%20would%20like%20to%20receive%20complete%20details%20for%20this%20property%2C%20including%20availability%20and%20the%20best%20pricing."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="thank_you_button secondary"
