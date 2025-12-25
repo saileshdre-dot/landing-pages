@@ -49,22 +49,47 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Google tag (gtag.js) */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17828164237"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-17828164237');
+            `,
+          }}
+        />
+        {/* Event snippet for Click to call conversion page */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              function gtag_report_conversion(url) {
+                var callback = function () {
+                  if (typeof(url) != 'undefined') {
+                    window.location = url;
+                  }
+                };
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-17828164237/EzK8CPWVg9cbEI3lkLVC',
+                    'value': 1.0,
+                    'currency': 'AED',
+                    'event_callback': callback
+                });
+                return false;
+              }
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${begum.variable} ${anekLatin.variable} antialiased`}
       >
-        {/* Google tag (gtag.js) */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-17828164237"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-17828164237');
-          `}
-        </Script>
         {children}
       </body>
     </html>
