@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FormModalProvider, useFormModal } from "./components/FormModalContext";
 import FormModal from "./components/FormModal";
+import Footer from "./components/Footer";
 
 function HomePageContent() {
   const { openFormModal } = useFormModal();
@@ -108,6 +109,7 @@ function HomePageContent() {
       </div>
 
       <FormModal />
+      <Footer />
     </div>
   );
 }
