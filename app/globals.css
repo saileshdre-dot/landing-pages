@@ -2231,7 +2231,7 @@ p, li {
   align-items: center;
   justify-content: center;
   gap: 3px;
-  padding: 4px 8px;
+  padding: 0;
   border: none;
   background: transparent;
   text-decoration: none;
@@ -2264,6 +2264,8 @@ p, li {
   transition: all 0.3s ease;
   text-align: center;
   line-height: 1.2;
+  font-weight: 600;
+  font-family: var(--font-anek-latin), sans-serif;
 }
 
 .nav_label.active {
@@ -2326,7 +2328,7 @@ p, li {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #8B4513;
+  background-color: #fff;
   color: #fff;
   display: flex;
   align-items: center;
@@ -2335,9 +2337,9 @@ p, li {
   z-index: 1000;
 }
 
-.call_icon_circle svg {
-  width: 24px;
-  height: 24px;
+.call_icon_circle img {
+  width: 40px;
+  height: 40px;
   stroke: #fff;
 }
 
@@ -2361,9 +2363,9 @@ p, li {
   }
   
   .call_icon_circle {
-    width: 80px;
-    height: 80px;
-    top: -50px;
+    width: 60px;
+    height: 60px;
+    top: -40px;
   }
   
   .call_icon_circle svg {
@@ -2386,8 +2388,8 @@ p, li {
     white-space: normal;
     text-align: center;
     line-height: 1.3;
-    left: 90%;
-    bottom: calc(100% + 20px);
+    left: 80%;
+    bottom: calc(100% + 10px);
   }
   
   .call_popover::after {
