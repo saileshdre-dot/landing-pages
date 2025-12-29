@@ -10,7 +10,7 @@ export default function FixedMobileButtons({ onOpenEnquiryModal }: FixedMobileBu
   return (
     <div className="fixed_mobile_buttons">
       <a
-        href="tel:971527543243"
+        href="tel:971505786682"
         className="fixed_nav_item"
       >
         <div className="nav_icon">
@@ -19,7 +19,7 @@ export default function FixedMobileButtons({ onOpenEnquiryModal }: FixedMobileBu
         <span className="nav_label">Call</span>
       </a>
       <a
-       href="https://wa.me/971527543243?text=Hello%2C%20I%20would%20like%20to%20receive%20complete%20details%20for%20this%20property%2C%20including%20availability%20and%20the%20best%20pricing."
+       href="https://wa.me/971505786682?text=Hello%2C%20I%20would%20like%20to%20receive%20complete%20details%20for%20this%20property%2C%20including%20availability%20and%20the%20best%20pricing."
         target="_blank"
         rel="noopener noreferrer"
         className="fixed_nav_item call_nav_item"

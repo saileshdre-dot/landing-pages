@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
+
+export const metadata: Metadata = {
+  title: "HADO by Beyond - Waterfront Apartments in Dubai Islands",
+  description: "Discover HADO by Beyond - Ultra-Japanese design waterfront apartments in Dubai Islands. 1-4BR units starting from 2.4M AED. 30% capital appreciation potential. Q2 2029 handover.",
+};
 
 export default function ThankYouPage() {
   return (
@@ -51,7 +57,7 @@ export default function ThankYouPage() {
                 Back to Home
               </Link>
               <a
-                href="https://wa.me/971527543243?text=Hello%2C%20I%20would%20like%20to%20receive%20complete%20details%20for%20this%20property%2C%20including%20availability%20and%20the%20best%20pricing."
+                href="https://wa.me/971505786682?text=Hello%2C%20I%20would%20like%20to%20receive%20complete%20details%20for%20this%20property%2C%20including%20availability%20and%20the%20best%20pricing."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="thank_you_button secondary"
