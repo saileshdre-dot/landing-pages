@@ -30,7 +30,7 @@ export default function FixedMobileButtons({ onOpenEnquiryModal }: FixedMobileBu
         <div className="nav_icon call_icon_circle">
           <Image src="/images/whatsapp.png" alt="WhatsApp" width={24} height={24} />
         </div>
-        <span className="nav_label active">Call Now</span>
+        <span className="nav_label active">WhatsApp Now</span>
       </a>
       <button
         className="fixed_nav_item"
