@@ -19,7 +19,7 @@ export default function FormModal() {
   const getModalHeading = () => {
     switch (modalType) {
       case "roi":
-        return "Get project details on WhatsApp";
+        return "Get available units & price list on Whatsapp & Telegram";
       case "brochure":
         return "DOWNLOAD HADO BY BEYOND BROCHURE...";
       case "layout":
@@ -36,7 +36,7 @@ export default function FormModal() {
       case "roi":
       case "layout":
       default:
-        return "Project details";
+        return "Submit Now";
     }
   };
 

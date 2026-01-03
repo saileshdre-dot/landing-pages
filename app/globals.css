@@ -2216,13 +2216,40 @@ p, li {
   left: 0;
   right: 0;
   z-index: 999;
-  padding: 8px 4px 12px;
+  padding: 16px;
   background-color: #F5F1E8;
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
   border-radius: 16px 16px 0 0;
-  align-items: flex-start;
-  justify-content: space-around;
-  gap: 4px;
+  align-items: center;
+  justify-content: center;
+}
+
+.fixed_mobile_cta_button {
+  width: 100%;
+  padding: 16px 24px;
+  background-color: #8B4513;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--font-begum), sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
+}
+
+.fixed_mobile_cta_button:hover {
+  background-color: #6B3410;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(139, 69, 19, 0.4);
+}
+
+.fixed_mobile_cta_button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(139, 69, 19, 0.3);
 }
 
 .fixed_nav_item {
@@ -2360,6 +2387,11 @@ p, li {
 @media (max-width: 768px) {
   .fixed_mobile_buttons {
     display: flex;
+  }
+  
+  .fixed_mobile_cta_button {
+    font-size: 14px;
+    padding: 14px 20px;
   }
   
   .call_icon_circle {
