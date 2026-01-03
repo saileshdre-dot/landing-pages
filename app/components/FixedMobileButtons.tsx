@@ -1,15 +1,15 @@
 "use client";
 
-interface FixedMobileButtonsProps {
-  onOpenEnquiryModal?: () => void;
-}
+import { useFormModal } from "./FormModalContext";
 
-export default function FixedMobileButtons({ onOpenEnquiryModal }: FixedMobileButtonsProps) {
+export default function FixedMobileButtons() {
+  const { openFormModal } = useFormModal();
+
   return (
     <div className="fixed_mobile_buttons">
       <button
         className="fixed_mobile_cta_button"
-        onClick={onOpenEnquiryModal}
+        onClick={() => openFormModal("roi")}
       >
         GET AVAILABLE UNITS & PRICE LIST
       </button>
