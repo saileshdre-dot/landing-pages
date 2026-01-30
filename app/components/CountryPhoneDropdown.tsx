@@ -140,6 +140,7 @@ export default function CountryPhoneDropdown({
     setSearchTerm("");
   };
 
+
   const getFlagUrl = (code: string) => {
     return `https://flagcdn.com/w20/${code.toLowerCase()}.png`;
   };
@@ -188,6 +189,7 @@ export default function CountryPhoneDropdown({
 
       {isOpen && (
         <div 
+          ref={dropdownRef}
           className="country_phone_dropdown_menu"
           onClick={(e) => e.stopPropagation()}
         >

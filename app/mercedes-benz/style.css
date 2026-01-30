@@ -6,6 +6,8 @@ html,body{
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 20px;
+  position: relative;
+  overflow: visible;
 }
 
 /* Contact Banner Section */
@@ -1725,21 +1727,21 @@ html,body{
   color: #fff;
 }
 .damac_floor_plan_phone_dropdown_black .country_phone_dropdown_menu{
-  background: #1a1a1a;
-  border: 1px solid rgba(220, 199, 121, 0.2);
+  background: #1e1e1e;
+  border: 1px solid rgba(220, 199, 121, 0.3);
   border-radius: 8px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
   margin-top: 5px;
   overflow: hidden;
 }
 .damac_floor_plan_phone_dropdown_black .country_search_wrapper{
   padding: 12px;
-  background: rgba(0, 0, 0, 0.3);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: #252525;
+  border-bottom: 1px solid rgba(220, 199, 121, 0.2);
 }
 .damac_floor_plan_phone_dropdown_black .country_search_input{
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #2a2a2a;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 6px;
   padding: 10px 14px;
   color: #fff;
@@ -1750,32 +1752,33 @@ html,body{
   transition: all 0.3s ease;
 }
 .damac_floor_plan_phone_dropdown_black .country_search_input::placeholder{
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.5);
 }
 .damac_floor_plan_phone_dropdown_black .country_search_input:focus{
-  background: rgba(255, 255, 255, 0.08);
+  background: #2f2f2f;
   border-color: #dcc779;
-  box-shadow: 0 0 0 3px rgba(220, 199, 121, 0.1);
+  box-shadow: 0 0 0 3px rgba(220, 199, 121, 0.15);
 }
 .damac_floor_plan_phone_dropdown_black .country_list{
   max-height: 300px;
   overflow-y: auto;
+  background: #1e1e1e;
 }
 .damac_floor_plan_phone_dropdown_black .country_list::-webkit-scrollbar{
   width: 6px;
 }
 .damac_floor_plan_phone_dropdown_black .country_list::-webkit-scrollbar-track{
-  background: rgba(0, 0, 0, 0.3);
+  background: #252525;
 }
 .damac_floor_plan_phone_dropdown_black .country_list::-webkit-scrollbar-thumb{
-  background: rgba(220, 199, 121, 0.3);
+  background: rgba(220, 199, 121, 0.4);
   border-radius: 3px;
 }
 .damac_floor_plan_phone_dropdown_black .country_list::-webkit-scrollbar-thumb:hover{
-  background: rgba(220, 199, 121, 0.5);
+  background: rgba(220, 199, 121, 0.6);
 }
 .damac_floor_plan_phone_dropdown_black .country_item{
-  background: transparent;
+  background: #1e1e1e;
   border: none;
   padding: 12px 16px;
   color: #fff;
@@ -1788,14 +1791,14 @@ html,body{
   text-align: left;
   cursor: pointer;
   transition: all 0.2s ease;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 .damac_floor_plan_phone_dropdown_black .country_item:hover{
-  background: rgba(220, 199, 121, 0.1);
+  background: rgba(220, 199, 121, 0.15);
   color: #dcc779;
 }
 .damac_floor_plan_phone_dropdown_black .country_item.selected{
-  background: rgba(220, 199, 121, 0.15);
+  background: rgba(220, 199, 121, 0.2);
   color: #dcc779;
 }
 .damac_floor_plan_phone_dropdown_black .country_item .country_name{
@@ -1803,7 +1806,7 @@ html,body{
   color: inherit;
 }
 .damac_floor_plan_phone_dropdown_black .country_item .country_code{
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.7);
   font-weight: 500;
 }
 .damac_floor_plan_phone_dropdown_black .country_item:hover .country_code,
@@ -1822,6 +1825,9 @@ html,body{
 .damac_contact_section{
   padding: 100px 0;
   background: #fff;
+  position: relative;
+  overflow: visible;
+  z-index: 1;
 }
 .damac_contact_header{
   text-align: center;
@@ -1859,22 +1865,30 @@ html,body{
 .damac_contact_form{
   max-width: 1000px;
   margin: 0 auto;
+  position: relative;
+  overflow: visible;
 }
 .damac_contact_form_columns{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   margin-bottom: 30px;
+  position: relative;
+  overflow: visible;
 }
 .damac_contact_form_column{
   display: flex;
   flex-direction: column;
   gap: 25px;
+  position: relative;
+  overflow: visible;
 }
 .damac_contact_form_group{
   display: flex;
   flex-direction: column;
   gap: 10px;
+  position: relative;
+  overflow: visible;
 }
 .damac_contact_form_group label{
   font-size: 14px;
@@ -1928,6 +1942,13 @@ html,body{
 .damac_contact_phone_wrapper{
   display: flex;
   gap: 10px;
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+.damac_contact_phone_wrapper .country_phone_dropdown{
+  position: relative;
+  z-index: 999999;
 }
 .damac_contact_phone_wrapper input{
   flex: 1;
@@ -1954,12 +1975,21 @@ html,body{
 .damac_contact_phone_wrapper .country_phone_trigger .dropdown_arrow{
   color: #121212;
 }
+.damac_contact_section .damac_contact_phone_wrapper .country_phone_dropdown_menu,
 .damac_contact_phone_wrapper .country_phone_dropdown_menu{
-  background: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-  margin-top: 5px;
+  background: #fff !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 4px !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15) !important;
+  position: absolute !important;
+  top: calc(100% + 4px) !important;
+  left: 0 !important;
+  z-index: 999999 !important;
+  min-width: 280px !important;
+  max-width: 400px !important;
+  transform: translateZ(0) !important;
+  will-change: transform !important;
+  isolation: isolate !important;
 }
 .damac_contact_phone_wrapper .country_search_wrapper{
   padding: 12px;
@@ -2032,6 +2062,8 @@ html,body{
   display: flex;
   flex-direction: column;
   gap: 10px;
+  position: relative;
+  z-index: 1;
 }
 .damac_contact_recaptcha_text{
   font-size: 18px;
@@ -2057,6 +2089,8 @@ html,body{
   text-transform: uppercase;
   letter-spacing: 1.5px;
   border-radius: 4px;
+  position: relative;
+  z-index: 1;
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: var(--font-gilroy), sans-serif;
