@@ -1545,7 +1545,8 @@ html,body{
   font-family: var(--font-gilroy), sans-serif;
 }
 .damac_floor_plan_enquiry_form_group input,
-.damac_floor_plan_enquiry_form_group textarea{
+.damac_floor_plan_enquiry_form_group textarea,
+.damac_floor_plan_enquiry_form_group select{
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
@@ -1555,16 +1556,31 @@ html,body{
   font-family: var(--font-gilroy), sans-serif;
   transition: all 0.3s ease;
   outline: none;
+  width: 100%;
 }
 .damac_floor_plan_enquiry_form_group input::placeholder,
 .damac_floor_plan_enquiry_form_group textarea::placeholder{
   color: rgba(255, 255, 255, 0.4);
 }
 .damac_floor_plan_enquiry_form_group input:focus,
-.damac_floor_plan_enquiry_form_group textarea:focus{
+.damac_floor_plan_enquiry_form_group textarea:focus,
+.damac_floor_plan_enquiry_form_group select:focus{
   background: rgba(255, 255, 255, 0.08);
   border-color: #dcc779;
   box-shadow: 0 0 0 3px rgba(220, 199, 121, 0.1);
+}
+.damac_floor_plan_enquiry_select{
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23dcc779' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  padding-right: 40px;
+}
+.damac_floor_plan_enquiry_select option{
+  background: #1a1a1a;
+  color: #fff;
+  padding: 10px;
 }
 .damac_floor_plan_enquiry_phone_wrapper{
   display: flex;
@@ -2139,7 +2155,7 @@ html,body{
 /* Amenities grid - 3 columns for 9 items */
 .damac_amenities_grid{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
@@ -2151,9 +2167,7 @@ html,body{
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  padding: 40px 30px;
   background: transparent;
-  border: 1px solid rgba(220, 199, 121, 0.3);
   border-radius: 4px;
   text-align: center;
   transition: border-color 0.3s ease;
@@ -2439,7 +2453,6 @@ html,body{
   
   /* Smaller amenity items */
   .damac_amenity_item{
-    padding: 30px 20px;
     gap: 16px;
   }
   
@@ -2487,6 +2500,28 @@ html,body{
   }
   .damac_contact_heading{
     font-size: 32px;
+  }
+  .damac_floor_plan_enquiry_modal_content{
+    padding: 20px 12px;
+  }
+  .damac_floor_plan_enquiry_modal_close{
+    top: 0px;
+    right: 0px;
+  }
+  .damac_floor_plan_enquiry_contact_btn{
+    font-size: 12px;
+  }
+  .damac_floor_plan_enquiry_contact_options{
+    margin-top: 0;
+  }
+  .damac_floor_plan_phone_dropdown_black .country_phone_trigger{
+    padding-inline: 8px;
+  }
+  .damac_floor_plan_enquiry_header{
+    margin-bottom: 32px;
+  }
+  .damac_floor_plan_enquiry_form_group input, .damac_floor_plan_enquiry_form_group textarea, .damac_floor_plan_enquiry_form_group select{
+    padding: 12px 8px;
   }
 }
 

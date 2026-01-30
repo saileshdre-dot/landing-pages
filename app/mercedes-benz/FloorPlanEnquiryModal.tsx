@@ -20,7 +20,7 @@ export default function FloorPlanEnquiryModal({
     name: "",
     email: "",
     phone: "",
-    message: "",
+    interestedUnitType: "",
   });
   const [phoneCode, setPhoneCode] = useState("+971");
   const [isChecked, setIsChecked] = useState(true);
@@ -85,7 +85,8 @@ export default function FloorPlanEnquiryModal({
           name: enquiryData.name,
           email: enquiryData.email,
           phone: `${phoneCode}${enquiryData.phone}`,
-          message: enquiryData.message || `Enquiry for: ${floorPlanTitle || "Floor Plan"}`,
+          unitType: enquiryData.interestedUnitType,
+          message: `Enquiry for: ${floorPlanTitle || "Floor Plan"}`,
           consent: isChecked,
         }),
       });
@@ -129,8 +130,7 @@ export default function FloorPlanEnquiryModal({
 
         <div className="damac_floor_plan_enquiry_modal_content">
           <div className="damac_floor_plan_enquiry_header">
-  
-            <h2 className="damac_floor_plan_enquiry_title">Enquire About This Floor Plan</h2>
+            <h2 className="damac_floor_plan_enquiry_title">Enquire Now</h2>
             {floorPlanTitle && (
               <p className="damac_floor_plan_enquiry_subtitle">{floorPlanTitle}</p>
             )}
@@ -181,16 +181,22 @@ export default function FloorPlanEnquiryModal({
             </div>
 
             <div className="damac_floor_plan_enquiry_form_group">
-              <label htmlFor="floor_plan_message">Message (Optional)</label>
-              <textarea
-                id="floor_plan_message"
-                placeholder="Tell us more about your requirements..."
-                value={enquiryData.message}
+              <label htmlFor="floor_plan_unit_type">Interested Unit Type</label>
+              <select
+                id="floor_plan_unit_type"
+                value={enquiryData.interestedUnitType}
                 onChange={(e) =>
-                  setEnquiryData({ ...enquiryData, message: e.target.value })
+                  setEnquiryData({ ...enquiryData, interestedUnitType: e.target.value })
                 }
-                rows={4}
-              />
+                required
+                className="damac_floor_plan_enquiry_select"
+              >
+                <option value="">Select Unit Type*</option>
+                <option value="2 Bedroom">2 Bedroom</option>
+                <option value="3 Bedroom">3 Bedroom</option>
+                <option value="4 Bedroom">4 Bedroom</option>
+                <option value="5 Bedroom">5 Bedroom</option>
+              </select>
             </div>
 
             <div className="damac_floor_plan_enquiry_checkbox_group">

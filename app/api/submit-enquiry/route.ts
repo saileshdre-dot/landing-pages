@@ -3,12 +3,12 @@ import { NextRequest, NextResponse } from 'next/server';
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, phone, consent } = body;
+    const { name, email, phone, unitType, message, consent } = body;
 
     // Validate required fields
     if (!name || !email || !phone || !consent) {
       return NextResponse.json(
-        { error: 'All fields are required' },
+        { error: 'All required fields are missing' },
         { status: 400 }
       );
     }
@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
 
     if (!WEBHOOK_URL) {
       // In development, just log the data
-      console.log('Enquiry Submission:', { name, email, phone, consent, timestamp: new Date().toISOString() });
+      console.log('Enquiry Submission:', { name, email, phone, unitType, message, consent, timestamp: new Date().toISOString() });
       return NextResponse.json(
         { message: 'Enquiry submitted successfully (webhook not configured)' },
         { status: 200 }
@@ -31,6 +31,8 @@ export async function POST(request: NextRequest) {
       name,
       email,
       phone,
+      unitType: unitType || '',
+      message: message || '',
       consent,
       timestamp: new Date().toISOString(),
     };

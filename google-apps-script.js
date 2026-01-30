@@ -98,14 +98,16 @@ function doPost(e) {
       }
       // Set headers if this is the first row
       if (targetSheet.getLastRow() === 0) {
-        targetSheet.appendRow(['Timestamp', 'Type', 'Name', 'WhatsApp Number', 'Consent']);
+        targetSheet.appendRow(['Timestamp', 'Type', 'Name', 'Email', 'Phone', 'Unit Type', 'Consent']);
       }
       // Append the data
       targetSheet.appendRow([
         data.timestamp || new Date(),
         'Form',
         data.name || '',
-        data.whatsapp || '',
+        data.email || '',
+        data.phone || '',
+        data.unitType || '',
         data.consent ? 'Yes' : 'No'
       ]);
       Logger.log('Form data appended successfully');
@@ -117,7 +119,7 @@ function doPost(e) {
       }
       // Set headers if this is the first row
       if (targetSheet.getLastRow() === 0) {
-        targetSheet.appendRow(['Timestamp', 'Type', 'Name', 'Email', 'Phone', 'Consent']);
+        targetSheet.appendRow(['Timestamp', 'Type', 'Name', 'Email', 'Phone', 'Unit Type', 'Message', 'Consent']);
       }
       // Append the data
       targetSheet.appendRow([
@@ -126,6 +128,8 @@ function doPost(e) {
         data.name || '',
         data.email || '',
         data.phone || '',
+        data.unitType || '',
+        data.message || '',
         data.consent ? 'Yes' : 'No'
       ]);
       Logger.log('Enquiry data appended successfully');
