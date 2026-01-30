@@ -17,10 +17,10 @@ interface FloorPlan {
 }
 
 const floorPlans: FloorPlan[] = [
-  { src: "/images/mercedes-benz/floor-plan-1.webp", alt: "Floor Plan 1", title: "Floor Plan 1" },
-  { src: "/images/mercedes-benz/floor-plan-2.webp", alt: "Floor Plan 2", title: "Floor Plan 2" },
-  { src: "/images/mercedes-benz/floor-plan-3.webp", alt: "Floor Plan 3", title: "Floor Plan 3" },
-  { src: "/images/mercedes-benz/floor-plan-4.webp", alt: "Floor Plan 4", title: "Floor Plan 4" },
+  { src: "/images/mercedes-benz/floor-plan-1.jpeg", alt: "Floor Plan 1", title: "Floor Plan 1" },
+  { src: "/images/mercedes-benz/floor-plan-2.jpeg", alt: "Floor Plan 2", title: "Floor Plan 2" },
+  { src: "/images/mercedes-benz/floor-plan-3.jpeg", alt: "Floor Plan 3", title: "Floor Plan 3" },
+  { src: "/images/mercedes-benz/floor-plan-4.jpeg", alt: "Floor Plan 4", title: "Floor Plan 4" },
 ];
 
 export default function MasterPlan() {
