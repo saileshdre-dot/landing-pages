@@ -1,34 +1,25 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Anek_Latin } from "next/font/google";
+import { Cinzel } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
-const begum = localFont({
+const gilroy = localFont({
   src: [
     {
-      path: "../public/fonts/fonnts.com-Begum-Light.woff",
-      weight: "300",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/fonnts.com-Begum-Medium.woff",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/fonnts.com-Begum-Semibold-.woff",
-      weight: "600",
+      path: "../public/fonts/gilroy/Gilroy-Regular.woff",
+      weight: "400",
       style: "normal",
     },
   ],
-  variable: "--font-begum",
+  variable: "--font-gilroy",
   display: "swap",
 });
 
-const anekLatin = Anek_Latin({
-  variable: "--font-anek-latin",
+const cinzel = Cinzel({
+  variable: "--font-cinzel",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
   display: "swap",
 });
 
@@ -53,6 +44,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet" />
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
@@ -68,7 +62,7 @@ export default function RootLayout({
         {/* End Google Tag Manager */}
       </head>
       <body
-        className={`${begum.variable} ${anekLatin.variable} antialiased`}
+        className={`${gilroy.variable} ${cinzel.variable} antialiased`}
       >
         {/* Google Tag Manager (noscript) */}
         <noscript>

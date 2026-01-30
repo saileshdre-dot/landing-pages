@@ -5,15 +5,17 @@
 }
 
 body {
-  font-family: var(--font-anek-latin), sans-serif;
+  font-family: var(--font-gilroy), sans-serif;
+  font-weight: 400; /* Regular */
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-begum), sans-serif;
+  font-family: var(--font-cinzel), serif;
 }
 
 p, li {
-  font-family: var(--font-anek-latin), sans-serif;
+  font-family: var(--font-gilroy), sans-serif;
+  font-weight: 400; /* Regular */
 }
 
 
@@ -720,7 +722,7 @@ p, li {
   color: #121212;
   transition: color 0.25s ease;
   position: relative;
-  font-family: var(--font-begum), sans-serif;
+  font-family: var(--font-cinzel), serif;
 }
 
 .accordion_header:hover {
@@ -2232,8 +2234,8 @@ p, li {
   border: none;
   border-radius: 12px;
   font-size: 16px;
-  font-weight: 600;
-  font-family: var(--font-begum), sans-serif;
+  font-weight: 500; /* Medium */
+  font-family: var(--font-gilroy), sans-serif;
   cursor: pointer;
   transition: all 0.3s ease;
   text-transform: uppercase;
@@ -2291,8 +2293,8 @@ p, li {
   transition: all 0.3s ease;
   text-align: center;
   line-height: 1.2;
-  font-weight: 600;
-  font-family: var(--font-anek-latin), sans-serif;
+  font-weight: 500; /* Medium */
+  font-family: var(--font-gilroy), sans-serif;
 }
 
 .nav_label.active {
@@ -3373,7 +3375,7 @@ p, li {
   font-weight: 700;
   color: #121212;
   margin: 0 0 20px 0;
-  font-family: var(--font-begum), sans-serif;
+  font-family: var(--font-cinzel), serif;
 }
 
 .property-features {
@@ -3422,7 +3424,7 @@ p, li {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-anek-latin), sans-serif;
+  font-family: var(--font-gilroy), sans-serif;
 }
 
 .property-action-btn:hover {
