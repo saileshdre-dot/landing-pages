@@ -33,25 +33,17 @@ export default function OverviewSection() {
           <div className="damac_overview_content" ref={contentRef}>
             <div className="damac_overview_header">
               <p className="damac_overview_subheading">PROJECT OVERVIEW</p>
-              <h2 className="damac_overview_heading">ABOUT THE DEVELOPMENT</h2>
+              <h2 className="damac_overview_heading">ABOUT THE PROJECT</h2>
             </div>
             <div className="damac_overview_text">
               <p>
-                Mercedes-Benz Places | Binghatti City represents a new era of luxury living in Dubai. 
-                This exclusive residential development combines the prestige of the Mercedes-Benz brand 
-                with Binghatti's commitment to architectural excellence and innovative design.
+                Mercedes-Benz Places at Binghatti City is a landmark branded residential development that blends automotive-inspired design, architectural excellence, and modern urban luxury
               </p>
               <p>
-                Located in one of Dubai's most sought-after areas, the development offers a range of 
-                meticulously designed apartments and penthouses, each crafted to the highest standards 
-                of quality and luxury. Residents will enjoy world-class amenities, stunning views, and 
-                an unparalleled lifestyle experience.
+               Crafted for those who appreciate refined living, this exclusive project offers meticulously designed residences with premium finishes, intelligent layouts, and breathtaking city views. Every detail reflects the Mercedes-Benz legacy of precision, comfort, and innovation —creating a lifestyle that goes beyond real estate.
               </p>
               <p>
-                The project features state-of-the-art facilities including swimming pools, fitness centers, 
-                landscaped gardens, and premium retail spaces. With its prime location and exceptional 
-                design, Mercedes-Benz Places | Binghatti City sets a new benchmark for luxury living 
-                in Dubai.
+              Whether for living or investment, this project stands as a symbol of prestige and long-term value in Dubai’s evolving skyline.
               </p>
             </div>
             <button className="damac_overview_button" onClick={openEnquiryModal}>

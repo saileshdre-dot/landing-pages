@@ -1,16 +1,18 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import BannerHeader from "./BannerHeader";
+import FloorPlanEnquiryModal from "./FloorPlanEnquiryModal";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
 export default function DamacIslandsBanner() {
+  const [enquiryModalOpen, setEnquiryModalOpen] = useState(false);
   const bannerRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
@@ -53,6 +55,27 @@ export default function DamacIslandsBanner() {
     }
   }, []);
 
+  const openEnquiryModal = () => {
+    setEnquiryModalOpen(true);
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeEnquiryModal = () => {
+    setEnquiryModalOpen(false);
+    document.body.style.overflow = "unset";
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (enquiryModalOpen && e.key === "Escape") {
+        closeEnquiryModal();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [enquiryModalOpen]);
+
   return (
     <section className="damac_contact_banner_section" ref={bannerRef}>
       <div className="damac_contact_banner_container">
@@ -63,7 +86,7 @@ export default function DamacIslandsBanner() {
               <div className="damac_contact_banner_content_area">
                 <p className="damac_contact_banner_subheading">MERCEDES-BENZ PLACES</p>
                 <h1 className="damac_contact_banner_heading">
-                  BINGHATTI <span className="damac_contact_banner_heading_gold">CITY</span>
+                  Binghatti  <span className="damac_contact_banner_heading_gold">City</span>
                 </h1>
                 <p className="damac_contact_banner_content_text">
                   A prestigious residential development in Dubai, combining luxury living with world-class amenities. Experience the perfect blend of elegance and modern sophistication.
@@ -71,19 +94,33 @@ export default function DamacIslandsBanner() {
                 
                 <div className="damac_contact_banner_project_details">
                   <div className="damac_contact_banner_detail_item">
-                    <span className="damac_contact_banner_detail_label">Location:</span>
-                    <span className="damac_contact_banner_detail_value">Dubai, UAE</span>
+                    <span className="damac_contact_banner_detail_label">Starting Price:</span>
+                    <span className="damac_contact_banner_detail_value"> AED 1.6M</span>
                   </div>
                   <div className="damac_contact_banner_detail_item">
-                    <span className="damac_contact_banner_detail_label">Developer:</span>
-                    <span className="damac_contact_banner_detail_value">Binghatti Developers</span>
+                    <span className="damac_contact_banner_detail_label">Unit Types:</span>
+                    <span className="damac_contact_banner_detail_value">Studio, 1BR, 2BR, 3BR, 4BR, 5BR</span>
                   </div>
                   <div className="damac_contact_banner_detail_item">
-                    <span className="damac_contact_banner_detail_label">Status:</span>
-                    <span className="damac_contact_banner_detail_value">Under Construction</span>
+                    <span className="damac_contact_banner_detail_label">Payment Plan:</span>
+                    <span className="damac_contact_banner_detail_value">70/30</span>
                   </div>
                 </div>
                 
+                <div className="damac_contact_banner_cta_buttons">
+                  <button 
+                    className="damac_contact_banner_cta_btn damac_contact_banner_cta_btn_filled"
+                    onClick={openEnquiryModal}
+                  >
+                    Check Availability With Floor Plan
+                  </button>
+                  <button 
+                    className="damac_contact_banner_cta_btn damac_contact_banner_cta_btn_bordered"
+                    onClick={openEnquiryModal}
+                  >
+                    Get Brochure
+                  </button>
+                </div>
              
               </div>
             </div>
@@ -93,7 +130,7 @@ export default function DamacIslandsBanner() {
         
             <div className="damac_contact_banner_image_wrapper">
               <Image
-                src="/images/banner.webp"
+                src="/images/mercedes-benz/banner.webp"
                 alt="Modern Houses"
                 width={1200}
                 height={700}
@@ -104,6 +141,13 @@ export default function DamacIslandsBanner() {
           </div>
         </div>
       </div>
+
+      {/* Enquiry Modal */}
+      <FloorPlanEnquiryModal
+        isOpen={enquiryModalOpen}
+        onClose={closeEnquiryModal}
+        floorPlanTitle="Mercedes-Benz Places | Binghatti City"
+      />
     </section>
   );
 }

@@ -58,7 +58,7 @@ export default function ReverseSection() {
       <div className="container">
         <div className="main_wrapper_reverse">
           <div className="damac_reverse_background" ref={backgroundRef}>
-            <Image src="/images/buggati/banner.webp" alt="Reverse Section Background" width={1000} height={1000} />
+            <Image src="/images/mercedes-benz/banner.webp" alt="Reverse Section Background" width={1000} height={1000} />
           </div> 
           <div className="damac_reverse_content">
             <div className="damac_reverse_text_wrapper" ref={contentRef}>

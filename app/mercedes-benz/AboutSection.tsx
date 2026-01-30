@@ -58,20 +58,22 @@ export default function AboutSection() {
       <div className="container">
         <div className="main_wrapper">
           <div className="damac_about_background" ref={backgroundRef}>
-            <Image src="/images/buggati/banner.webp" alt="About Section Background" width={1000} height={1000} />
+            <Image src="/images/mercedes-benz/banner.webp" alt="About Section Background" width={1000} height={1000} />
           </div> 
           <div className="damac_about_content">
             <div className="damac_about_text_wrapper" ref={contentRef}>
               <p className="damac_about_subheading">MERCEDES-BENZ PLACES</p>
-              <h2 className="damac_about_heading">LUXURY LIVING REDEFINED</h2>
+              <h2 className="damac_about_heading">ABOUT THE PROJECT</h2>
               
               <div className="damac_about_body">
                 <p className="damac_about_paragraph">
-                  Mercedes-Benz Places | Binghatti City represents the pinnacle of luxury residential living in Dubai. This exclusive development combines the prestige of the Mercedes-Benz brand with world-class architecture and design.
-                </p>
+               Mercedes-Benz Places at Binghatti City is a landmark branded residential development that blends automotive-inspired design, architectural excellence, and modern urban luxury. </p>
                 <p className="damac_about_paragraph">
-                  Located in one of Dubai's most prestigious areas, each residence is meticulously crafted to offer unparalleled comfort, sophistication, and a lifestyle that reflects the excellence of the Mercedes-Benz brand.
-                </p>
+               Crafted for those who appreciate refined living, this exclusive project offers meticulously designed residences with premium finishes, intelligent layouts, and breathtaking city views. Every detail reflects the Mercedes-Benz legacy of precision, comfort, and innovation —creating a lifestyle that goes beyond real estate.</p>
+              
+                  <p className="damac_about_paragraph">
+                  Whether for living or investment, this project stands as a symbol of prestige and long-term value in Dubai’s evolving skyline.
+                  </p>
               </div>
               
               <button className="damac_about_button">

@@ -91,10 +91,10 @@ html,body{
 }
 .damac_contact_banner_detail_label{
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   color: #666;
   font-family: var(--font-gilroy), sans-serif;
-  text-transform: uppercase;
+  text-transform: capitalize;
   letter-spacing: 0.5px;
 }
 .damac_contact_banner_detail_value{
@@ -103,6 +103,48 @@ html,body{
   color: #121212;
   font-family: var(--font-gilroy), sans-serif;
   text-align: right;
+}
+.damac_contact_banner_cta_buttons{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+.damac_contact_banner_cta_btn{
+  padding: 14px 32px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-gilroy), sans-serif;
+  border-radius: 4px;
+  border: none;
+  width: 100%;
+  text-align: center;
+}
+.damac_contact_banner_cta_btn_filled{
+  background: #dcc779;
+  color: #000;
+  box-shadow: 0 4px 15px rgba(220, 199, 121, 0.3);
+}
+.damac_contact_banner_cta_btn_filled:hover{
+  background: #fff;
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220, 199, 121, 0.5);
+}
+.damac_contact_banner_cta_btn_bordered{
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+.damac_contact_banner_cta_btn_bordered:hover{
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #dcc779;
+  color: #dcc779;
+  transform: translateY(-2px);
 }
 .damac_contact_banner_contact_info{
   margin-bottom: 40px;
@@ -876,9 +918,18 @@ html,body{
   font-size: 36px;
   font-weight: 400;
   line-height: 1.2;
-  margin: 0;
+  margin: 0; 
   color: #121212;
   font-family: var(--font-cinzel), serif;
+  margin-bottom: 12px;
+}
+.damac_gallery_tagline{
+  font-size: 20px;
+  font-weight: 400;
+  color: #666;
+  margin: 0;
+  font-family: var(--font-gilroy), sans-serif;
+  line-height: 1.5;
 }
 .damac_gallery_slider_wrapper{
   position: relative;
@@ -1173,6 +1224,14 @@ html,body{
   color: #121212;
   font-family: var(--font-cinzel), serif;
 }
+.damac_master_plan_tagline{
+  font-size: 20px;
+  font-weight: 400;
+  color: #666;
+  margin: 0;
+  font-family: var(--font-gilroy), sans-serif;
+  line-height: 1.5;
+}
 .damac_master_plan_wrapper{
   max-width: 1200px;
   margin: 0 auto;
@@ -1195,10 +1254,12 @@ html,body{
   height: auto;
   object-fit: cover;
   display: block;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, filter 0.3s ease;
+  filter: blur(2px);
 }
 .damac_master_plan_image_container:hover .damac_master_plan_image{
   transform: scale(1.05);
+  filter: blur(0px);
 }
 .damac_master_plan_overlay{
   position: absolute;
@@ -1264,6 +1325,120 @@ html,body{
   width: 20px;
   height: 20px;
   stroke: currentColor;
+}
+
+/* Floor Plan Slider */
+.damac_floor_plan_slider{
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.damac_floor_plan_slider_container{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.damac_floor_plan_slider_track{
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.damac_floor_plan_slide{
+  min-width: 100%;
+  flex-shrink: 0;
+}
+
+.damac_floor_plan_nav_btn{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  color: #121212;
+}
+
+.damac_floor_plan_nav_btn:hover{
+  background: #dcc779;
+  color: #000;
+  box-shadow: 0 4px 15px rgba(220, 199, 121, 0.4);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.damac_floor_plan_prev_btn{
+  left: 20px;
+}
+
+.damac_floor_plan_next_btn{
+  right: 20px;
+}
+
+.damac_floor_plan_nav_btn svg{
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.damac_floor_plan_dots{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.damac_floor_plan_dot{
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.damac_floor_plan_dot:hover{
+  background: rgba(220, 199, 121, 0.5);
+  transform: scale(1.2);
+}
+
+.damac_floor_plan_dot.active{
+  background: #dcc779;
+  width: 14px;
+  height: 14px;
+}
+
+@media (max-width: 768px){
+  .damac_floor_plan_nav_btn{
+    width: 40px;
+    height: 40px;
+  }
+  .damac_floor_plan_prev_btn{
+    left: 10px;
+  }
+  .damac_floor_plan_next_btn{
+    right: 10px;
+  }
+  .damac_floor_plan_nav_btn svg{
+    width: 20px;
+    height: 20px;
+  }
 }
 
 /* Floor Plan Enquiry Modal */
@@ -1659,7 +1834,7 @@ html,body{
   font-size: 16px;
   line-height: 1.7;
   color: #666;
-  margin: 0 0 40px 0;
+  margin: 0 0 20px 0;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -1694,7 +1869,8 @@ html,body{
   letter-spacing: 0.5px;
 }
 .damac_contact_form_group input,
-.damac_contact_form_group textarea{
+.damac_contact_form_group textarea,
+.damac_contact_form_group select{
   background: #fff;
   border:none;
   border-radius: 4px;
@@ -1712,9 +1888,22 @@ html,body{
   color: #999;
 }
 .damac_contact_form_group input:focus,
-.damac_contact_form_group textarea:focus{
+.damac_contact_form_group textarea:focus,
+.damac_contact_form_group select:focus{
   border-color: #dcc779;
   box-shadow: 0 0 0 3px rgba(220, 199, 121, 0.1);
+}
+.damac_contact_select{
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23121212' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  padding-right: 40px;
+}
+.damac_contact_select option{
+  padding: 10px;
+  color: #121212;
 }
 .damac_contact_form_group textarea{
   resize: vertical;
@@ -1829,10 +2018,11 @@ html,body{
   gap: 10px;
 }
 .damac_contact_recaptcha_text{
-  font-size: 11px;
+  font-size: 18px;
   color: #999;
   font-family: var(--font-gilroy), sans-serif;
   line-height: 1.5;
+  text-align: center;
 }
 .damac_contact_recaptcha_text a{
   color: #dcc779;
@@ -1868,110 +2058,138 @@ html,body{
   cursor: not-allowed;
 }
 
-/* Amenities Section */
+/* Amenities Section - New Design */
 .damac_amenities_section{
   position: relative;
-  min-height: 100vh;
   overflow: hidden;
 }
+
+/* Background with blur effect */
 .damac_amenities_bg{
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  min-height: 100vh;
   z-index: 1;
   overflow: hidden;
 }
+
 .damac_amenities_bg_image{
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: blur(4px);
+  transform: scale(1.1);
 }
+
+/* Dark overlay */
 .damac_amenities_overlay{
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(0, 0, 0, 0.75);
   z-index: 2;
 }
+
+/* Content container */
 .damac_amenities_content{
   position: relative;
   z-index: 3;
   width: 100%;
-  padding: 120px 0;
-  min-height: 100vh;
+  padding: 100px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
+
+/* Header section */
 .damac_amenities_header{
-  text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 }
-.damac_amenities_subheading{
-  color: #dcc779;
-  font-size: 0.95em;
-  text-transform: uppercase;
-  letter-spacing: 0.35em;
-  margin-bottom: 20px;
-  font-weight: 500;
-  font-family: var(--font-gilroy), sans-serif;
-}
-.damac_amenities_heading{
+
+/* Title in golden/orange */
+.damac_amenities_title{
   font-size: 48px;
-  font-weight: 400;
-  line-height: 1.2;
-  margin: 0;
-  color: #fff;
+  font-weight: 600;
+  color: #dcc779;
+  margin: 0 0 12px 0;
   font-family: var(--font-cinzel), serif;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  text-align: center;
+  line-height: 1.2;
 }
+
+/* Question text in white */
+.damac_amenities_question{
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  margin: 0;
+  font-family: var(--font-gilroy), sans-serif;
+  line-height: 1.4;
+  text-align: center;
+
+}
+
+/* Amenities grid - 3 columns for 9 items */
 .damac_amenities_grid{
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
+
+/* Individual amenity item - Simple design */
 .damac_amenity_item{
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
   padding: 40px 30px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  border: 2px solid rgba(220, 199, 121, 0.3);
+  background: transparent;
+  border: 1px solid rgba(220, 199, 121, 0.3);
+  border-radius: 4px;
   text-align: center;
+  transition: border-color 0.3s ease;
 }
+
+/* Simple hover effect */
 .damac_amenity_item:hover{
-  background: rgba(255, 255, 255, 0.15);
   border-color: #dcc779;
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(220, 199, 121, 0.2);
 }
-.damac_amenity_icon{
-  font-size: 48px;
-  line-height: 1;
-  width: 80px;
-  height: 80px;
+
+/* Icon wrapper - Simple border */
+.damac_amenity_icon_wrapper{
+  width: 70px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(220, 199, 121, 0.2);
-  border-radius: 50%;
-  backdrop-filter: blur(10px);
+  color: #dcc779;
+  border: 1px solid #dcc779;
+  border-radius: 4px;
 }
+
+/* Icon SVG styling */
+.damac_amenity_icon_wrapper svg{
+  width: 36px;
+  height: 36px;
+  stroke: #dcc779;
+}
+
+/* Amenity name in white - Simple text */
 .damac_amenity_name{
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   color: #fff;
   font-family: var(--font-gilroy), sans-serif;
+  line-height: 1.4;
 }
 
 /* Location Advantages Section */
@@ -2046,6 +2264,32 @@ html,body{
   color: #ccc;
   margin: 0;
   font-family: var(--font-gilroy), sans-serif;
+}
+.damac_location_connectivity_heading{
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 15px 0;
+  font-family: var(--font-cinzel), serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+.damac_location_connectivity_list li{
+  font-size: 16px;
+  font-weight: 400;
+  color: #ccc;
+  margin: 0;
+  font-family: var(--font-gilroy), sans-serif;
+  list-style: none;
+  padding-left: 0;
+  position: relative;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 .damac_location_connectivity{
   margin-bottom: 40px;
@@ -2128,22 +2372,20 @@ html,body{
 }
 
 @media (max-width: 1024px){
-  .damac_amenities_section{
-    min-height: 700px;
-  }
-  .damac_amenities_bg{
-    height: 110%;
-  }
-  .damac_amenities_content{
-    padding: 80px 0;
-  }
-  .damac_amenities_heading{
-    font-size: 36px;
-  }
+  /* Amenities Section - Tablet Responsive */
   .damac_amenities_grid{
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    gap: 24px;
   }
+  
+  .damac_amenities_title{
+    font-size: 40px;
+  }
+  
+  .damac_amenities_question{
+    font-size: 18px;
+  }
+  
   .damac_location_advantages_wrapper{
     grid-template-columns: 1fr;
     gap: 30px;
@@ -2159,48 +2401,63 @@ html,body{
   }
 }
 
+/* Amenities Section - Mobile Responsive (max-width: 768px) */
 @media (max-width: 768px){
+  /* Reduce section min-height */
   .damac_amenities_section{
-    min-height: 600px;
+    min-height: auto;
   }
+  
+  /* Adjust content padding */
   .damac_amenities_content{
-    padding: 60px 0;
+    padding: 60px 0 40px;
   }
-  .damac_amenities_heading{
-    font-size: 28px;
+  
+  /* Reduce header margin */
+  .damac_amenities_header{
+    margin-bottom: 40px;
+    padding: 0 20px;
   }
+  
+  /* Smaller title */
+  .damac_amenities_title{
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+  
+  /* Smaller question text */
+  .damac_amenities_question{
+    font-size: 16px;
+  }
+  
+  /* Grid: 2 columns on mobile */
   .damac_amenities_grid{
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    padding: 0 20px;
   }
+  
+  /* Smaller amenity items */
   .damac_amenity_item{
     padding: 30px 20px;
+    gap: 16px;
   }
-  .damac_amenity_icon{
+  
+  /* Smaller icon wrapper */
+  .damac_amenity_icon_wrapper{
     width: 60px;
     height: 60px;
-    font-size: 36px;
   }
-  .damac_amenities_section{
-    min-height: 500px;
+  
+  /* Smaller icon SVG */
+  .damac_amenity_icon_wrapper svg{
+    width: 32px;
+    height: 32px;
   }
-  .damac_amenities_content{
-    padding: 50px 0;
-  }
-  .damac_amenities_heading{
-    font-size: 24px;
-  }
-  .damac_amenities_grid{
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-  .damac_amenity_item{
-    padding: 20px 15px;
-  }
-  .damac_amenity_icon{
-    font-size: 32px;
-    width: 60px;
-    height: 60px;
+  
+  /* Smaller amenity name */
+  .damac_amenity_name{
+    font-size: 14px;
   }
   .damac_location_details{
     padding: 30px 20px;
@@ -2264,36 +2521,36 @@ html,body{
 .damac_footer_content_area{
   width: 100%;
 }
-.damac_footer_logo{
+.damac_footer_qr_code{
   display: flex;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
-.damac_footer_logo_image{
+.damac_footer_qr_image{
   height: auto;
   width: auto;
-  max-width: 150px;
-  max-height: 60px;
+  max-width: 200px;
+  max-height: 200px;
   object-fit: contain;
 }
-.damac_footer_about_developer{
-  margin-bottom: 40px;
-}
-.damac_footer_about_developer_title{
-  font-size: 20px;
+.damac_footer_verified_text{
+  font-size: 24px;
   font-weight: 600;
   color: #fff;
-  margin: 0 0 20px 0;
+  margin: 0 0 12px 0;
   font-family: var(--font-cinzel), serif;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-.damac_footer_about_developer_text{
-  font-size: 14px;
+.damac_footer_disclaimer{
+  font-size: 13px;
   line-height: 1.8;
   color: #ccc;
-  margin: 0;
+  margin: 0 0 20px 0;
   font-family: var(--font-gilroy), sans-serif;
+}
+.damac_footer_disclaimer:last-of-type{
+  margin-bottom: 0;
 }
 .damac_footer_links{
   margin-top: 30px;
@@ -2362,8 +2619,19 @@ html,body{
   .damac_footer_content_col{
     padding: 40px 30px;
   }
-  .damac_footer_logo{
-    margin-bottom: 30px;
+  .damac_footer_qr_code{
+    margin-bottom: 25px;
+  }
+  .damac_footer_qr_image{
+    max-width: 150px;
+    max-height: 150px;
+  }
+  .damac_footer_verified_text{
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  .damac_footer_disclaimer{
+    font-size: 12px;
   }
   .damac_footer_nav_primary,
   .damac_footer_nav_secondary{
@@ -2527,20 +2795,734 @@ html,body{
   font-family: var(--font-gilroy), sans-serif;
 }
 
+/* About Developer Section */
+.damac_about_developer_section{
+  padding: 80px 0;
+}
+.damac_about_developer_main_wrapper{
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.damac_about_developer_content{
+  width: 50%;
+  z-index: 1;
+  position: relative;
+}
+.damac_about_developer_content .damac_about_developer_text_wrapper{
+  padding: 50px;
+  margin: 50px 0;
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.1);
+  background: #000;
+}
+.damac_about_developer_background{
+  right: auto;
+  left: 0;
+  width: calc(60% + 60px);
+  height: 100%;
+  position: absolute;
+}
+.damac_about_developer_background img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.damac_about_developer_subheading{
+  color: #dcc779;
+  font-size: 0.95em;
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-family: var(--font-gilroy), sans-serif;
+}
+.damac_about_developer_heading{
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 30px 0;
+  color: #fff;
+  font-family: var(--font-cinzel), serif;
+}
+.damac_about_developer_description{
+  font-size: 15px;
+  line-height: 1.7;
+  color: #ccc;
+  margin: 0 0 25px 0;
+  font-family: var(--font-gilroy), sans-serif;
+}
+.damac_about_developer_list{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+.damac_about_developer_item{
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+.damac_about_developer_item svg{
+  color: #dcc779;
+  flex-shrink: 0;
+  margin-top: 2px;
+  background: #000;
+  border-radius: 50%;
+  padding: 6px;
+  width: 28px;
+  height: 28px;
+  box-sizing: border-box;
+  border: 1px solid #dcc779;
+}
+.damac_about_developer_item span{
+  font-size: 15px;
+  line-height: 1.6;
+  color: #fff;
+  font-family: var(--font-gilroy), sans-serif;
+}
+.damac_about_developer_footer{
+  font-size: 15px;
+  line-height: 1.7;
+  color: #ccc;
+  margin: 0;
+  font-family: var(--font-gilroy), sans-serif;
+}
+
+@media (max-width: 768px){
+  .damac_about_developer_main_wrapper{
+    flex-direction: column;
+  }
+  .damac_about_developer_background{
+    position: relative;
+    width: 100%;
+    height: 300px;
+  }
+  .damac_about_developer_content{
+    width: 100%;
+  }
+  .damac_about_developer_content .damac_about_developer_text_wrapper{
+    margin: 0;
+    padding: 40px 30px;
+  }
+}
+
 @media (max-width: 1366px){
   .damac_contact_banner_content_col{
     width: 60%;
   }
 }
 
-@media (max-width: 768px){
-  .damac_property_cards_grid{
-    grid-template-columns: 1fr;
+/* ============================================
+   RESPONSIVE STYLES - MAX WIDTH 768px
+   ============================================ */
+
+/* Contact Banner Section - Responsive */
+@media (max-width: 768px) {
+  /* Stack content and image vertically on mobile */
+  .damac_contact_banner_row {
+    flex-direction: column;
   }
-  .damac_highlights_list{
-    grid-template-columns: 1fr;
+  
+  /* Full width content column on mobile */
+  .damac_contact_banner_content_col {
+    width: 100%;
+    padding: 40px 20px;
+    padding-top: 120px;
   }
-  .damac_overview_text{
+  
+  /* Full width image column on mobile */
+  .damac_contact_banner_image_col {
+    width: 100%;
+    min-height: 300px;
+    padding-bottom: 0;
+  }
+  
+  /* Reduce heading size on mobile */
+  .damac_contact_banner_heading {
+    font-size: 32px;
+  }
+  
+  /* Adjust subheading size */
+  .damac_contact_banner_subheading {
+    font-size: 12px;
+  }
+  
+  /* Reduce content text size */
+  .damac_contact_banner_content_text {
+    font-size: 14px;
+  }
+  
+  /* Adjust project details padding */
+  .damac_contact_banner_project_details {
+    padding: 20px;
+  }
+  
+  /* Stack CTA buttons vertically */
+  .damac_contact_banner_cta_buttons {
+    gap: 12px;
+  }
+  
+  /* Adjust button padding */
+  .damac_contact_banner_cta_btn {
+    padding: 12px 20px;
+    font-size: 13px;
+  }
+}
+
+/* Banner Header - Responsive */
+@media (max-width: 768px) {
+  /* Reduce header padding on mobile */
+  .damac_banner_header {
+    padding: 15px 20px;
+  }
+  .damac_contact_banner_image_wrapper{
+    height: 100%;
+  }
+  .damac_overview_header{
+    margin-bottom: 20px;
+  }
+  /* Smaller logo on mobile */
+  .damac_banner_header_logo_image {
+    max-width: 100px;
+    max-height: 40px;
+  }
+  
+  /* Hide button text, show icon only */
+  .damac_banner_header_button {
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+}
+
+/* Overview Section - Responsive */
+@media (max-width: 768px) {
+  /* Reduce section padding on mobile */
+  .damac_overview_section {
+    padding: 60px 0;
+    padding-top: 40px;
+  }
+  
+  /* Center text on mobile */
+  .damac_overview_text {
     text-align: center;
+  }
+  
+  /* Reduce heading size */
+  .damac_overview_heading {
+    font-size: 28px;
+  }
+  
+  /* Reduce subheading size */
+  .damac_overview_subheading {
+    font-size: 0.85em;
+  }
+  
+  /* Adjust text size */
+  .damac_overview_text p {
+    font-size: 14px;
+  }
+  
+  /* Full width button on mobile */
+  .damac_overview_button {
+    width: 100%;
+    padding: 12px 24px;
+    margin-top: 0;
+  }
+}
+
+/* Highlights Section - Responsive */
+@media (max-width: 768px) {
+  /* Stack content and image vertically */
+  .damac_highlights_main_wrapper {
+    flex-direction: column;
+  }
+  
+  /* Full width background on mobile */
+  .damac_highlights_background {
+    position: relative;
+    width: 100%;
+    height: 300px;
+  }
+  .damac_highlights_section{
+    padding-block: 20px 40px;
+  }
+
+  /* Full width content on mobile */
+  .damac_highlights_content {
+    width: 100%;
+  }
+  
+  /* Adjust text wrapper padding */
+  .damac_highlights_content .damac_highlights_text_wrapper {
+    margin: 0;
+    padding: 40px 30px;
+  }
+  
+  /* Reduce heading size */
+  .damac_highlights_heading {
+    font-size: 28px;
+  }
+  
+  /* Reduce subheading size */
+  .damac_highlights_subheading {
+    font-size: 0.85em;
+  }
+  
+  /* Adjust list item spacing */
+  .damac_highlights_list {
+    gap: 12px;
+  }
+  
+  /* Reduce highlight item text size */
+  .damac_highlight_item span {
+    font-size: 14px;
+  }
+}
+
+/* Property Cards Section - Responsive */
+@media (max-width: 768px) {
+  /* Single column grid on mobile */
+  .damac_property_cards_grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  /* Reduce section padding */
+  .damac_property_cards_section {
+    padding: 40px 0;
+  }
+  
+  /* Reduce header margin */
+  .damac_property_cards_header {
+    margin-bottom: 40px;
+  }
+  
+  /* Reduce heading size */
+  .damac_property_cards_heading {
+    font-size: 28px;
+  }
+  
+  /* Reduce subheading size */
+  .damac_property_cards_subheading {
+    font-size: 0.85em;
+  }
+  
+  /* Adjust card image height */
+  .damac_property_card_image {
+    height: 250px;
+  }
+  
+  /* Reduce card padding */
+  .damac_property_card_info {
+    padding: 24px 20px;
+  }
+  
+  /* Reduce card title size */
+  .damac_property_card_title {
+    font-size: 16px;
+  }
+  
+  /* Adjust specs gap */
+  .damac_property_card_specs {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+}
+
+/* Gallery Section - Responsive */
+@media (max-width: 768px) {
+  /* Reduce section padding */
+  .damac_gallery_section {
+    padding: 40px 0;
+  }
+  
+  /* Reduce header margin */
+  .damac_gallery_header {
+    margin-bottom: 40px;
+  }
+  
+  /* Reduce heading size */
+  .damac_gallery_heading {
+    font-size: 28px;
+  }
+  
+  /* Reduce tagline size */
+  .damac_gallery_tagline {
+    font-size: 16px;
+  }
+  
+  /* Reduce slide height */
+  .damac_gallery_slide {
+    height: 400px;
+  }
+  
+  /* Smaller navigation buttons */
+  .damac_gallery_nav_btn {
+    width: 40px;
+    height: 40px;
+  }
+  
+  /* Adjust button positions */
+  .damac_gallery_nav_prev {
+    left: 10px;
+  }
+  
+  .damac_gallery_nav_next {
+    right: 10px;
+  }
+  
+  /* Smaller thumbnails */
+  .damac_gallery_thumbnails {
+    gap: 10px;
+    margin-top: 30px;
+  }
+  
+  .damac_gallery_thumbnail {
+    width: 80px;
+    height: 60px;
+  }
+  
+  /* Smaller overlay icon */
+  .damac_gallery_overlay svg {
+    width: 44px;
+    height: 44px;
+    padding: 11px;
+  }
+}
+
+/* Floor Plans Section - Responsive */
+@media (max-width: 768px) {
+  /* Reduce section padding */
+  .damac_master_plan_section {
+    padding: 40px 0;
+  }
+  
+  /* Reduce header margin */
+  .damac_master_plan_header {
+    margin-bottom: 40px;
+  }
+  
+  /* Reduce heading size */
+  .damac_master_plan_heading {
+    font-size: 28px;
+  }
+  .damac_location_advantages_section{
+    padding-block: 40px;
+  }
+  
+  /* Reduce tagline size */
+  .damac_master_plan_tagline {
+    font-size: 16px;
+  }
+  
+  /* Smaller navigation buttons */
+  .damac_floor_plan_nav_btn {
+    width: 40px;
+    height: 40px;
+  }
+  
+  /* Adjust button positions */
+  .damac_floor_plan_prev_btn {
+    left: 10px;
+  }
+  
+  .damac_floor_plan_next_btn {
+    right: 10px;
+  }
+  
+  /* Smaller button icons */
+  .damac_floor_plan_nav_btn svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Location Amenities Section - Responsive */
+@media (max-width: 768px) {
+  /* Stack image and content vertically */
+  .damac_location_advantages_wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  /* Reduce image height */
+  .damac_location_image_wrapper {
+    min-height: 300px;
+  }
+  
+  .damac_location_image_container {
+    min-height: 300px;
+  }
+  
+  /* Adjust info padding */
+  .damac_location_info {
+    padding: 0;
+  }
+  .damac_about_developer_section{
+    padding-block: 40px;
+  }
+  
+  /* Reduce heading size */
+  .damac_location_info_heading {
+    font-size: 28px;
+  }
+  
+  /* Reduce connectivity heading size */
+  .damac_location_connectivity_heading {
+    font-size: 20px;
+  }
+  
+  /* Adjust connectivity item spacing */
+  .damac_location_connectivity_list {
+    gap: 15px;
+  }
+  
+  /* Reduce connectivity name size */
+  .damac_location_connectivity_name {
+    font-size: 14px;
+  }
+  
+  /* Reduce connectivity time size */
+  .damac_location_connectivity_time {
+    font-size: 14px;
+  }
+}
+
+/* About Developer Section - Responsive */
+@media (max-width: 768px) {
+  /* Stack content and image vertically */
+  .damac_about_developer_main_wrapper {
+    flex-direction: column;
+  }
+  
+  /* Full width background on mobile */
+  .damac_about_developer_background {
+    position: relative;
+    width: 100%;
+    height: 300px;
+  }
+  
+  /* Full width content on mobile */
+  .damac_about_developer_content {
+    width: 100%;
+  }
+  
+  /* Adjust text wrapper padding */
+  .damac_about_developer_content .damac_about_developer_text_wrapper {
+    margin: 0;
+    padding: 40px 30px;
+  }
+  
+  /* Reduce heading size */
+  .damac_about_developer_heading {
+    font-size: 28px;
+  }
+  
+  /* Reduce subheading size */
+  .damac_about_developer_subheading {
+    font-size: 0.85em;
+  }
+  
+  /* Adjust description size */
+  .damac_about_developer_description {
+    font-size: 14px;
+  }
+  
+  /* Adjust list item spacing */
+  .damac_about_developer_list {
+    gap: 12px;
+  }
+  
+  /* Reduce item text size */
+  .damac_about_developer_item span {
+    font-size: 14px;
+  }
+}
+
+/* Contact Section - Responsive */
+@media (max-width: 768px) {
+  html,body{
+    overflow-x: hidden !important;
+  }
+  /* Reduce section padding */
+  .damac_contact_section {
+    padding: 40px 0;
+    padding-top: 20px;
+  }
+  
+  /* Reduce header margin */
+  .damac_contact_header {
+    margin-bottom: 40px;
+  }
+  .damac_contact_header .grid_item_wrapper{
+    flex-direction: column;
+  }
+  
+  /* Reduce heading size */
+  .damac_contact_heading {
+    font-size: 28px;
+  }
+  
+  /* Reduce description size */
+  .damac_contact_description {
+    font-size: 14px;
+  }
+  
+  /* Stack form columns vertically */
+  .damac_contact_form_columns {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  /* Adjust form group spacing */
+  .damac_contact_form_column {
+    gap: 20px;
+  }
+  
+  /* Reduce submit button padding */
+  .damac_contact_submit_btn {
+    padding: 14px 32px;
+    font-size: 14px;
+  }
+}
+
+/* Footer Section - Responsive */
+@media (max-width: 768px) {
+  /* Stack content and image vertically */
+  .damac_footer_row {
+    flex-direction: column;
+  }
+  
+  /* Full width content column */
+  .damac_footer_content_col {
+    width: 100%;
+    padding: 40px 30px;
+  }
+  
+  /* Full width image column */
+  .damac_footer_image_col {
+    width: 100%;
+    padding-top: 0;
+    height: 400px;
+  }
+  
+  /* Adjust image wrapper */
+  .damac_footer_image_wrapper {
+    position: relative;
+    height: 100%;
+    top: 0;
+  }
+  
+  /* Reduce QR code size */
+  .damac_footer_qr_code {
+    margin-bottom: 25px;
+  }
+  
+  .damac_footer_qr_image {
+    max-width: 150px;
+    max-height: 150px;
+  }
+  
+  /* Reduce verified text size */
+  .damac_footer_verified_text {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Reduce disclaimer text size */
+  .damac_footer_disclaimer {
+    font-size: 12px;
+  }
+  
+  /* Adjust links spacing */
+  .damac_footer_links_list {
+    gap: 15px 20px;
+  }
+  
+  /* Reduce link text size */
+  .damac_footer_links_list li a {
+    font-size: 12px;
+  }
+}
+
+/* About Section - Responsive */
+@media (max-width: 768px) {
+  /* Stack content and image vertically */
+  .damac_about_section .main_wrapper {
+    flex-direction: column;
+  }
+  
+  /* Full width background on mobile */
+  .damac_about_background {
+    position: relative;
+    width: 100%;
+    height: 300px;
+  }
+  
+  /* Full width content on mobile */
+  .damac_about_content {
+    width: 100%;
+  }
+  
+  /* Adjust text wrapper padding */
+  .damac_about_content .damac_about_text_wrapper {
+    margin: 0;
+    padding: 40px 30px;
+  }
+  
+  /* Reduce heading size */
+  .damac_about_heading {
+    font-size: 28px;
+  }
+  
+  /* Reduce subheading size */
+  .damac_about_subheading {
+    font-size: 0.85em;
+  }
+  
+  /* Adjust body text size */
+  .damac_about_body p {
+    font-size: 14px;
+  }
+}
+
+/* Reverse Section - Responsive */
+@media (max-width: 768px) {
+  /* Stack content and image vertically */
+  .damac_reverse_section .main_wrapper_reverse {
+    flex-direction: column;
+  }
+  
+  /* Full width background on mobile */
+  .damac_reverse_background {
+    position: relative;
+    width: 100%;
+    height: 300px;
+  }
+  
+  /* Full width content on mobile */
+  .damac_reverse_content {
+    width: 100%;
+  }
+  
+  /* Adjust text wrapper padding */
+  .damac_reverse_content .damac_reverse_text_wrapper {
+    margin: 0;
+    padding: 40px 30px;
+  }
+  
+  /* Reduce heading size */
+  .damac_reverse_heading {
+    font-size: 28px;
+  }
+  
+  /* Reduce subheading size */
+  .damac_reverse_subheading {
+    font-size: 0.85em;
+  }
+  
+  /* Adjust body text size */
+  .damac_reverse_body p {
+    font-size: 14px;
   }
 }

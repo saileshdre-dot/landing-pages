@@ -16,12 +16,12 @@ interface GalleryImage {
 }
 
 const galleryImages: GalleryImage[] = [
-  { src: "/images/buggati/gallery-1.jpg", alt: "Gallery Image 1" },
-  { src: "/images/buggati/gallery-2.jpg", alt: "Gallery Image 2" },
-  { src: "/images/buggati/gallery-3.jpg", alt: "Gallery Image 3" },
-  { src: "/images/buggati/gallery-4.jpg", alt: "Gallery Image 4" },
-  { src: "/images/buggati/gallery-5.jpg", alt: "Gallery Image 5" },
-  { src: "/images/buggati/gallery-6.jpg", alt: "Gallery Image 6" },
+  { src: "/images/mercedes-benz/gallery-1.webp", alt: "Gallery Image 1" },
+  { src: "/images/mercedes-benz/gallery-2.webp", alt: "Gallery Image 2" },
+  { src: "/images/mercedes-benz/gallery-3.webp", alt: "Gallery Image 3" },
+  { src: "/images/mercedes-benz/gallery-4.webp", alt: "Gallery Image 4" },
+  { src: "/images/mercedes-benz/gallery-5.webp", alt: "Gallery Image 5" },
+  { src: "/images/mercedes-benz/gallery-6.webp", alt: "Gallery Image 6" },
 ];
 
 export default function GallerySlider() {
@@ -117,8 +117,8 @@ export default function GallerySlider() {
       <section id="gallery" className="damac_gallery_section" ref={galleryRef}>
         <div className="container">
           <div className="damac_gallery_header" ref={headerRef}>
-            <p className="damac_gallery_subheading">PROPERTY GALLERY</p>
             <h2 className="damac_gallery_heading">EXPLORE OUR COLLECTION</h2>
+            <p className="damac_gallery_tagline">Explore the essence of Mercedes-Benz inspired livingthrough stunning visuals</p>
           </div>
 
           <div className="damac_gallery_slider_wrapper" ref={sliderRef}>

@@ -28,20 +28,29 @@ export default function BannerHeader() {
 
   const handleSectionClick = (sectionId: string) => {
     closeMenu();
+    
+    // Wait for menu to close before scrolling
     setTimeout(() => {
       const element = document.getElementById(sectionId);
       if (element) {
-        const yOffset = 80;
-        const y = element.getBoundingClientRect().top + window.pageYOffset - yOffset;
+        const yOffset = 100; // Offset for fixed header
+        const targetY = element.getBoundingClientRect().top + window.pageYOffset - yOffset;
+        const startY = window.pageYOffset;
         
-        // Use GSAP for smooth scroll animation
-        gsap.to(window, {
-          duration: 1.5,
-          scrollTo: y,
+        // Create an object to animate
+        const scrollObj = { y: startY };
+        
+        // Use GSAP to animate scroll position with smooth easing
+        gsap.to(scrollObj, {
+          y: targetY,
+          duration: 1.2,
           ease: "power2.inOut",
+          onUpdate: function() {
+            window.scrollTo(0, scrollObj.y);
+          }
         });
       }
-    }, 100);
+    }, 300); // Wait for drawer animation to complete
   };
 
   return (
@@ -50,7 +59,7 @@ export default function BannerHeader() {
         <div className="damac_banner_header_container">
           <div className="damac_banner_header_logo">
             <Image
-              src="/images/buggati/bbnn.webp"
+              src="/images/mercedes-benz/bbnn.webp"
               alt="Logo"
               width={150}
               height={60}
@@ -103,9 +112,6 @@ export default function BannerHeader() {
               </li>
               <li>
                 <a href="#" onClick={(e) => { e.preventDefault(); handleSectionClick("highlights"); }}>HIGHLIGHTS</a>
-              </li>
-              <li>
-                <a href="#" onClick={(e) => { e.preventDefault(); handleSectionClick("property-cards"); }}>PROPERTIES</a>
               </li>
               <li>
                 <a href="#" onClick={(e) => { e.preventDefault(); handleSectionClick("gallery"); }}>GALLERY</a>

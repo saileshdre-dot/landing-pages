@@ -10,15 +10,28 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
+interface FloorPlan {
+  src: string;
+  alt: string;
+  title: string;
+}
+
+const floorPlans: FloorPlan[] = [
+  { src: "/images/mercedes-benz/floor-plan-1.webp", alt: "Floor Plan 1", title: "Floor Plan 1" },
+  { src: "/images/mercedes-benz/floor-plan-2.webp", alt: "Floor Plan 2", title: "Floor Plan 2" },
+  { src: "/images/mercedes-benz/floor-plan-3.webp", alt: "Floor Plan 3", title: "Floor Plan 3" },
+  { src: "/images/mercedes-benz/floor-plan-4.webp", alt: "Floor Plan 4", title: "Floor Plan 4" },
+];
+
 export default function MasterPlan() {
-  const [selectedImage, setSelectedImage] = useState<boolean>(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [enquiryModalOpen, setEnquiryModalOpen] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null);
+  const sliderRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (sectionRef.current && headerRef.current && imageRef.current) {
+    if (sectionRef.current && headerRef.current && sliderRef.current) {
       const ctx = gsap.context(() => {
         // Animate header
         gsap.from(headerRef.current!.children, {
@@ -34,10 +47,10 @@ export default function MasterPlan() {
           ease: "power3.out",
         });
 
-        // Animate master plan image
-        gsap.from(imageRef.current, {
+        // Animate slider
+        gsap.from(sliderRef.current, {
           scrollTrigger: {
-            trigger: imageRef.current,
+            trigger: sliderRef.current,
             start: "top 80%",
             toggleActions: "play none none reverse",
           },
@@ -54,14 +67,20 @@ export default function MasterPlan() {
     }
   }, []);
 
-  const openLightbox = () => {
-    setSelectedImage(true);
-    document.body.style.overflow = "hidden";
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index);
   };
 
-  const closeLightbox = () => {
-    setSelectedImage(false);
-    document.body.style.overflow = "unset";
+  const goToPrevious = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? floorPlans.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === floorPlans.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
   const openEnquiryModal = () => {
@@ -76,9 +95,6 @@ export default function MasterPlan() {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (selectedImage && e.key === "Escape") {
-        closeLightbox();
-      }
       if (enquiryModalOpen && e.key === "Escape") {
         closeEnquiryModal();
       }
@@ -86,89 +102,95 @@ export default function MasterPlan() {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [selectedImage, enquiryModalOpen]);
+  }, [enquiryModalOpen]);
 
   return (
     <>
       <section id="master-plan" className="damac_master_plan_section" ref={sectionRef}>
         <div className="container">
           <div className="damac_master_plan_header" ref={headerRef}>
-            <p className="damac_master_plan_subheading">MASTER PLAN</p>
-            <h2 className="damac_master_plan_heading">PROJECT OVERVIEW</h2>
+            <p className="damac_master_plan_subheading"></p>
+            <h2 className="damac_master_plan_heading">FLOOR PLAN</h2>
+            <p className="damac_master_plan_tagline">Thoughtfully planned layouts that balance space, elegance, and functionality.</p>
           </div>
 
-          <div className="damac_master_plan_wrapper" ref={imageRef}>
-            <div className="damac_master_plan_image_container">
-              <Image
-                src="/images/buggati/master.jpg"
-                alt="Master Plan"
-                width={1200}
-                height={800}
-                className="damac_master_plan_image"
-              />
-              <div className="damac_master_plan_overlay">
-                <button
-                  className="damac_master_plan_overlay_button damac_master_plan_enquire_btn"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    openEnquiryModal();
+          <div className="damac_master_plan_wrapper" ref={sliderRef}>
+            <div className="damac_floor_plan_slider">
+              <button
+                className="damac_floor_plan_nav_btn damac_floor_plan_prev_btn"
+                onClick={goToPrevious}
+                aria-label="Previous floor plan"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+
+              <div className="damac_floor_plan_slider_container">
+                <div
+                  className="damac_floor_plan_slider_track"
+                  style={{
+                    transform: `translateX(-${currentIndex * 100}%)`,
                   }}
                 >
-                  ENQUIRE NOW
-                </button>
-                <button
-                  className="damac_master_plan_overlay_button damac_master_plan_view_btn"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    openLightbox();
-                  }}
-                >
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="12" y1="8" x2="12" y2="16"></line>
-                    <line x1="8" y1="12" x2="16" y2="12"></line>
-                  </svg>
-                  VIEW LARGE
-                </button>
+                  {floorPlans.map((plan, index) => (
+                    <div key={index} className="damac_floor_plan_slide">
+                      <div className="damac_master_plan_image_container">
+                        <Image
+                          src={plan.src}
+                          alt={plan.alt}
+                          width={1200}
+                          height={800}
+                          className="damac_master_plan_image"
+                        />
+                        <div className="damac_master_plan_overlay">
+                          <button
+                            className="damac_master_plan_overlay_button damac_master_plan_enquire_btn"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              openEnquiryModal();
+                            }}
+                          >
+                            ENQUIRE NOW
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
+
+              <button
+                className="damac_floor_plan_nav_btn damac_floor_plan_next_btn"
+                onClick={goToNext}
+                aria-label="Next floor plan"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+
+            {/* Dots Navigation */}
+            <div className="damac_floor_plan_dots">
+              {floorPlans.map((_, index) => (
+                <button
+                  key={index}
+                  className={`damac_floor_plan_dot ${index === currentIndex ? "active" : ""}`}
+                  onClick={() => goToSlide(index)}
+                  aria-label={`Go to floor plan ${index + 1}`}
+                />
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Lightbox Modal */}
-      {selectedImage && (
-        <div className="damac_lightbox" onClick={closeLightbox}>
-          <button
-            className="damac_lightbox_close"
-            onClick={closeLightbox}
-            aria-label="Close lightbox"
-          >
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-          </button>
-
-          <div className="damac_lightbox_content" onClick={(e) => e.stopPropagation()}>
-            <Image
-              src="/images/buggati/master.jpg"
-              alt="Master Plan"
-              width={1400}
-              height={1000}
-              className="damac_lightbox_image"
-              priority
-            />
-            <div className="damac_lightbox_title">Master Plan</div>
-          </div>
-        </div>
-      )}
-
       {/* Enquiry Modal */}
       <FloorPlanEnquiryModal
         isOpen={enquiryModalOpen}
         onClose={closeEnquiryModal}
-        floorPlanTitle="Master Plan"
+        floorPlanTitle={floorPlans[currentIndex]?.title || "Floor Plan"}
       />
     </>
   );

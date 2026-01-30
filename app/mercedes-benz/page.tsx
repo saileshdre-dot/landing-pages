@@ -7,6 +7,7 @@ import GallerySlider from "./GallerySlider";
 import FloorPlans from "./FloorPlans";
 import AmenitiesSection from "./AmenitiesSection";
 import LocationAmenities from "./LocationAmenities";
+import AboutDeveloperSection from "./AboutDeveloperSection";
 import ContactSection from "./ContactSection";
 import Footer from "./Footer";
 import './style.css'
@@ -22,11 +23,12 @@ export default function DamacIslands2Page() {
       <DamacIslandsBanner />
       <OverviewSection />
       <HighlightsSection />
-      <PropertyCards />
+      <AmenitiesSection />
+      {/* <PropertyCards /> */}
       <GallerySlider />
       <FloorPlans />
-      {/* <AmenitiesSection /> */}
       <LocationAmenities />
+      <AboutDeveloperSection />
       <ContactSection />
       <Footer />
     </div>

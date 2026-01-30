@@ -45,7 +45,7 @@ export default function LocationAmenities() {
           <div className="damac_location_image_wrapper" ref={imageRef}>
             <div className="damac_location_image_container">
               <Image
-                src="/images/buggati/location-advantages.webp"
+                src="/images/mercedes-benz/location-advantages.webp"
                 alt="Mercedes-Benz Places | Binghatti City Location"
                 fill
                 className="damac_location_image"
@@ -64,10 +64,11 @@ export default function LocationAmenities() {
                     LOCATION <span className="damac_location_info_heading_gold">ADVANTAGES</span>
                   </h2>
                   <p className="damac_location_info_tagline">
-                    Mercedes-Benz Places | Binghatti City is strategically located in Business Bay, Dubai's premier business and lifestyle destination, offering unparalleled connectivity to the city's most iconic landmarks, world-class amenities, and major business hubs.
-                  </p>
+                 Located in Binghatti City, the project offers seamless connectivity to Dubai’s most important destinations</p>
                 </div>
 
+                
+              <h4 className="damac_location_connectivity_heading">Nearby Landmarks</h4>
                 <div className="damac_location_connectivity">
               
                   <div className="damac_location_connectivity_list">
@@ -113,8 +114,16 @@ export default function LocationAmenities() {
                       </div>
                     </div>
                   </div>
-                </div>
+              </div>
+              
 
+               <h4 className="damac_location_connectivity_heading">Why This Location Works</h4>
+              <ul className="damac_location_connectivity_list">
+              <li> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Central & high-demand area</li>
+                <li> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Excellent rental market</li>
+               <li> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Easy access to business hubs</li>
+                <li> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Strong future growth corrido</li>
+              </ul>
               </div>
             </div>
         </div>

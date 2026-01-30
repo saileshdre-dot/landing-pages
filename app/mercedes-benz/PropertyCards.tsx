@@ -28,7 +28,7 @@ const propertyCards: PropertyCard[] = [
     beds: 2,
     baths: 2,
     sqft: "1,200 SQFT",
-    image: "/images/buggati/2 bed.jpg"
+    image: "/images/mercedes-benz/2 bed.jpg"
   },
   {
     title: "The Mercedes-Benz Pagoda Suite - 3 Bedroom Unit",
@@ -37,7 +37,7 @@ const propertyCards: PropertyCard[] = [
     beds: 3,
     baths: 3,
     sqft: "1,800 SQFT",
-    image: "/images/buggati/3 bed.jpg"
+    image: "/images/mercedes-benz/3 bed.jpg"
   },
   {
     title: "The Grand Mercedes Suite - 4 Bedroom Unit",
@@ -46,7 +46,7 @@ const propertyCards: PropertyCard[] = [
     beds: 4,
     baths: 4,
     sqft: "2,300 SQFT",
-    image: "/images/buggati/4 bed.jpg"
+    image: "/images/mercedes-benz/4 bed.jpg"
   },
   {
     title: "The Grand Mercedes Suite - 5 Bedroom Unit",
@@ -55,7 +55,7 @@ const propertyCards: PropertyCard[] = [
     beds: 5,
     baths: 5,
     sqft: "3,500 SQFT",
-    image: "/images/buggati/5 bed.jpg"
+    image: "/images/mercedes-benz/5 bed.jpg"
   }
 ];
 

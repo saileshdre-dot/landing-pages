@@ -10,16 +10,16 @@ if (typeof window !== "undefined") {
 }
 
 const highlights = [
-  "Premium Mercedes-Benz branded residential development",
-  "Prime location in Dubai with excellent connectivity",
-  "World-class amenities and facilities",
-  "Luxurious interiors with high-end finishes",
-  "Stunning views and modern architecture",
-  "Investment opportunity with strong ROI potential",
-  "Flexible payment plans available",
-  "Premium retail and dining options",
-  "24/7 security and concierge services",
-  "Sustainable and eco-friendly design"
+  "Official Mercedes-Benz branded residences",
+  "Signature architectural design by Binghatti",
+  "Premium residences with luxury finishes",
+  "Smarthome integration",
+  "Iconic skyline and city views",
+  "High-demand urban location",
+  "World-class lifestyle amenities",
+  "Strong rental & capital appreciation potential",
+  "Limited-edition luxury living",
+  "Ideal for investors & end users"
 ];
 
 export default function HighlightsSection() {
@@ -34,7 +34,7 @@ export default function HighlightsSection() {
       <div className="container">
         <div className="damac_highlights_main_wrapper">
           <div className="damac_highlights_background" ref={backgroundRef}>
-            <Image src="/images/buggati/banner.webp" alt="Highlights Background" width={1000} height={1000} />
+            <Image src="/images/mercedes-benz/banner.webp" alt="Highlights Background" width={1000} height={1000} />
           </div>
           <div className="damac_highlights_content">
             <div className="damac_highlights_text_wrapper" ref={contentRef}>

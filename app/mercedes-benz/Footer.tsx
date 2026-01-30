@@ -58,31 +58,34 @@ export default function Footer() {
           <div className="damac_footer_content_col">
             <div className="damac_footer_content_wrapper" ref={contentRef}>
               <div className="damac_footer_content_area">
-                {/* Logo */}
-                <div className="damac_footer_logo">
+                {/* QR Code */}
+                <div className="damac_footer_qr_code">
                   <Image
-                    src="/images/buggati/bbnn.webp"
-                    alt="Logo"
-                    width={150}
-                    height={60}
-                    className="damac_footer_logo_image"
+                    src="/images/mercedes-benz/qr_scanner.webp"
+                    alt="QR Code"
+                    width={200}
+                    height={200}
+                    className="damac_footer_qr_image"
                     priority
                   />
                 </div>
 
-                {/* About The Developer */}
-                <div className="damac_footer_about_developer">
-                  <h3 className="damac_footer_about_developer_title">About The Developer</h3>
-                  <p className="damac_footer_about_developer_text">
-                    Binghatti Developers, the real estate development arm of Binghatti Holding, operates throughout the UAE with an investment value constituting AED 3.5 Billion across a portfolio of 40 projects, The company currently operates in several areas throughout Dubai including Dubai Silicon Oasis, Jumeirah Village Circle, Liwan, Dubai Land Residence Complex and Business Bay. The company possesses bold plans of expansion in the following years, specifically focusing on the expansion of its real-estate portfolio in Dubai.
-                  </p>
-                </div>
+                {/* RERA & DLD Verified */}
+                <p className="damac_footer_verified_text">RERA & DLD Verified Project</p>
+
+                {/* Disclaimer */}
+                <p className="damac_footer_disclaimer">
+                  This project is developed and verified in partnership with the Dubai Land Department (DLD) and governed by the Real Estate Regulatory Agency (RERA), ensuring legal security and buyer confidence.
+                </p>
+                <p className="damac_footer_disclaimer">
+                  <strong>Disclaimer:</strong> The information provided on this website is intended exclusively for informational purposes and should not be construed as an offer of services. This site is managed by a RERA authorized real estate agency namely DRE Homes Real Estate Broker is a company registered in Dubai, United Arab Emirates (License No. 599208), We are regulated by the Real Estate Regulatory Agency under office number 652.The pricing information presented on this website is subject to alteration without advance notification, and the assurance of property availability cannot be guaranteed. The images showcased on this website are for representational purposes only and may not accurately reflect the actual properties. We may share your data with Real Estate Regulatory Agency (RERA) registered Developers for further processing as necessary. Additionally, we may send updates and information to the mobile number or email address registered with us. All rights reserved. The content, design, and information on this website are protected by copyright and other intellectual property rights. Any unauthorized use or reproduction of the content may violate applicable laws. For accurate and up-to-date information regarding services, pricing, availability, and any other details, it is recommended to contact us directly through the provided contact information on this website. Thank you for visiting our website.
+                </p>
 
                 {/* Footer Links */}
                 <nav className="damac_footer_links">
                   <ul className="damac_footer_links_list">
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms and Conditions</a></li>
+                    <li><a href="/privacy-policy">Privacy Policy</a></li>
+                    <li><a href="/terms-and-conditions">Terms and Conditions</a></li>
                   </ul>
                 </nav>
               </div>
@@ -92,7 +95,7 @@ export default function Footer() {
           <div className="damac_footer_image_col" ref={imageColRef}>
             <div className="damac_footer_image_wrapper">
               <Image
-                src="/images/buggati/gallery-6.jpg"
+                src="/images/mercedes-benz/gallery-1.webp"
                 alt="Modern Interior"
                 width={1200}
                 height={700}
