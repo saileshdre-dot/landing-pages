@@ -63,16 +63,9 @@ function doPost(e) {
     // Replace 'YOUR_SHEET_ID' with your actual Google Sheet ID
     // You can find the sheet ID in the URL: https://docs.google.com/spreadsheets/d/SHEET_ID/edit
     // Copy the SHEET_ID part (the long string between /d/ and /edit)
-    const sheetId = 'YOUR_SHEET_ID'; // ⚠️ REPLACE THIS WITH YOUR ACTUAL SHEET ID
+    const sheetId = '1eimxOz825McthVmPU5iOFNHnrZL78QEWc-Fzr_KsVJ0'; // ⚠️ REPLACE THIS WITH YOUR ACTUAL SHEET ID
     
-    if (sheetId === 'YOUR_SHEET_ID') {
-      Logger.log('ERROR: Sheet ID not configured');
-      return ContentService.createTextOutput(JSON.stringify({
-        success: false,
-        error: 'Sheet ID not configured. Please replace YOUR_SHEET_ID with your actual Google Sheet ID.'
-      }))
-      .setMimeType(ContentService.MimeType.JSON);
-    }
+
     
     // Open the spreadsheet
     let sheet;
