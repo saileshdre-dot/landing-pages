@@ -69,9 +69,12 @@ export default function BannerHeader() {
           </div>
           
           <div className="damac_banner_header_right">
-            <button className="damac_banner_header_button">
+            <a 
+              href="tel:+971505786682"
+              className="damac_banner_header_button"
+            >
               INTSTANT CALL BACK
-            </button>
+            </a>
             <button 
               className="damac_banner_header_hamburger"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -88,6 +91,16 @@ export default function BannerHeader() {
       {/* Navigation Drawer */}
       <div className={`damac_banner_drawer_overlay ${isMenuOpen ? "open" : ""}`} onClick={closeMenu}>
         <div className="damac_banner_drawer" onClick={(e) => e.stopPropagation()}>
+          <button 
+            className="damac_banner_drawer_close"
+            onClick={closeMenu}
+            aria-label="Close menu"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
 
           <nav className="damac_banner_drawer_nav">
             <ul className="damac_banner_drawer_nav_list">
@@ -116,9 +129,12 @@ export default function BannerHeader() {
           </nav>
 
           <div className="damac_banner_drawer_footer">
-            <button className="damac_banner_drawer_button" onClick={(e) => { e.preventDefault(); handleSectionClick("contact"); }}>
+            <a 
+              href="tel:+971505786682"
+              className="damac_banner_drawer_button"
+            >
               INTSTANT CALL BACK
-            </button>
+            </a>
           </div>
         </div>
       </div>

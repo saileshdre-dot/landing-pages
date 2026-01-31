@@ -298,6 +298,7 @@ html,body{
   transition: all 0.3s ease;
   font-family: var(--font-gilroy), sans-serif;
   border-radius: 4px;
+  text-decoration: none;
 }
 .damac_banner_header_button:hover{
   background: #dcc779;
@@ -411,13 +412,20 @@ html,body{
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
   width: 40px;
   height: 40px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
 }
 .damac_banner_drawer_close:hover{
   color: #dcc779;
-  transform: rotate(90deg);
+}
+.damac_banner_drawer_close svg{
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
 }
 .damac_banner_drawer_nav{
   flex: 1;
@@ -532,6 +540,7 @@ html,body{
   font-family: var(--font-gilroy), sans-serif;
   border-radius: 4px;
   width: 100%;
+  text-decoration: none;
 }
 .damac_banner_drawer_button:hover{
   background: #dcc779;
