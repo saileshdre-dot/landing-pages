@@ -49,7 +49,7 @@ export default function ThankYouPage() {
               We have received your enquiry. Our team will contact you shortly.
             </p>
             <p className="thank_you_submessage">
-              We appreciate your interest in HADO by Beyond. One of our
+              We appreciate your interest in this project. One of our
               representatives will reach out to you within 24 hours.
             </p>
             <div className="thank_you_actions">
