@@ -166,12 +166,6 @@ export default function ContactSection() {
             </label>
           </div>
 
-          <div className="damac_contact_recaptcha">
-            <div className="g-recaptcha" data-sitekey="your-recaptcha-site-key"></div>
-            <p className="damac_contact_recaptcha_text">
-              Submit Now | Our expert will contact you shortly
-            </p>
-          </div>
 
           <button
             type="submit"
