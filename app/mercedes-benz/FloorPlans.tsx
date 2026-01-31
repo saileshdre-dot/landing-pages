@@ -151,7 +151,7 @@ export default function MasterPlan() {
                             openEnquiryModal();
                           }}
                         >
-                          ENQUIRE NOW
+                         Get all Floor Plans
                         </button>
                       </div>
                     </div>
@@ -190,7 +190,7 @@ export default function MasterPlan() {
         isOpen={enquiryModalOpen}
         onClose={closeEnquiryModal}
         floorPlanTitle={floorPlans[currentIndex]?.title || "Floor Plan"}
-        buttonText="ENQUIRE NOW"
+        buttonText="Get all Floor Plans"
       />
     </>
   );

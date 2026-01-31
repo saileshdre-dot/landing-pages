@@ -3,11 +3,13 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
+import FloorPlanEnquiryModal from "./FloorPlanEnquiryModal";
 
 export default function BannerHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isListingsOpen, setIsListingsOpen] = useState(false);
+  const [enquiryModalOpen, setEnquiryModalOpen] = useState(false);
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -53,6 +55,16 @@ export default function BannerHeader() {
     }, 300); // Wait for drawer animation to complete
   };
 
+  const openEnquiryModal = () => {
+    setEnquiryModalOpen(true);
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeEnquiryModal = () => {
+    setEnquiryModalOpen(false);
+    document.body.style.overflow = "unset";
+  };
+
   return (
     <>
       <header className="damac_banner_header">
@@ -69,12 +81,12 @@ export default function BannerHeader() {
           </div>
           
           <div className="damac_banner_header_right">
-            <a 
-              href="tel:+971505786682"
+            <button 
+              onClick={openEnquiryModal}
               className="damac_banner_header_button"
             >
               INTSTANT CALL BACK
-            </a>
+            </button>
             <button 
               className="damac_banner_header_hamburger"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -129,15 +141,25 @@ export default function BannerHeader() {
           </nav>
 
           <div className="damac_banner_drawer_footer">
-            <a 
-              href="tel:+971505786682"
+            <button 
+              onClick={() => {
+                closeMenu();
+                openEnquiryModal();
+              }}
               className="damac_banner_drawer_button"
             >
               INTSTANT CALL BACK
-            </a>
+            </button>
           </div>
         </div>
       </div>
+
+      <FloorPlanEnquiryModal
+        isOpen={enquiryModalOpen}
+        onClose={closeEnquiryModal}
+        floorPlanTitle="Mercedes-Benz Places | Binghatti City"
+        buttonText="INTSTANT CALL BACK"
+      />
     </>
   );
 }

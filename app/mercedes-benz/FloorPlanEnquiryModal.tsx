@@ -219,7 +219,7 @@ export default function FloorPlanEnquiryModal({
                   Submitting...
                 </>
               ) : (
-                "Submit Enquiry"
+                "Submit Now"
               )}
             </button>
 

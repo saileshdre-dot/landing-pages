@@ -142,6 +142,8 @@ export default function ContactSection() {
                   className="damac_contact_select"
                 >
                   <option value="">Select Unit Type*</option>
+                  <option value="Studio">Studio</option>
+                  <option value="1 Bedroom">1 Bedroom</option>
                   <option value="2 Bedroom">2 Bedroom</option>
                   <option value="3 Bedroom">3 Bedroom</option>
                   <option value="4 Bedroom">4 Bedroom</option>
