@@ -133,7 +133,7 @@ export default function FloorPlanEnquiryModal({
             <p className="damac_floor_plan_enquiry_subtitle">{buttonText}</p>
             <div className="damac_floor_plan_enquiry_header_buttons">
               <a
-                href="https://wa.me/971505786682?text=Hello%2C%20I%20would%20like%20to%20receive%20complete%20details%20for%20this%20floor%20plan%2C%20including%20availability%20and%20the%20best%20pricing."
+                href="https://wa.me/971505786682?text=Hello%2C%20I%20would%20like%20to%20understand%20the%20growth%20potential%20of%20Mercedes-Benz%20Palace%2C%20Bhighatti%20City.%20Thank%20you"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="damac_floor_plan_enquiry_header_btn damac_floor_plan_enquiry_header_btn_whatsapp"
