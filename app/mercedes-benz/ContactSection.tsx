@@ -1,13 +1,7 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useState, useRef } from "react";
 import CountryPhoneDropdown from "../components/CountryPhoneDropdown";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -20,46 +14,6 @@ export default function ContactSection() {
   const [consentChecked, setConsentChecked] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
-  const headerRef = useRef<HTMLDivElement>(null);
-  const formRef = useRef<HTMLFormElement>(null);
-
-  useEffect(() => {
-    if (sectionRef.current && headerRef.current && formRef.current) {
-      const ctx = gsap.context(() => {
-        // Animate header
-        gsap.from(headerRef.current!.children, {
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-          },
-          y: 50,
-          opacity: 0,
-          duration: 1,
-          stagger: 0.2,
-          ease: "power3.out",
-        });
-
-        // Animate form
-        gsap.from(formRef.current!.children, {
-          scrollTrigger: {
-            trigger: formRef.current,
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-          },
-          y: 30,
-          opacity: 0,
-          duration: 0.8,
-          stagger: 0.1,
-          ease: "power2.out",
-        });
-
-        ScrollTrigger.refresh();
-      }, sectionRef.current);
-
-      return () => ctx.revert();
-    }
-  }, []);
 
   const handlePhoneChange = (value: string) => {
     const digitsOnly = value.replace(/\D/g, "");
@@ -101,32 +55,38 @@ export default function ContactSection() {
   return (
     <section id="contact" className="damac_contact_section" ref={sectionRef}>
       <div className="container">
-        <div className="damac_contact_header" ref={headerRef}>
+        <div className="damac_contact_header">
           <h2 className="damac_contact_heading">Interested in Mercedes-Benz Places?</h2>
           <p className="damac_contact_description">
            Get exclusive details, pricing, floor plans, and availability.
           </p>
-          <div className="grid_item_wrapper" style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "20px" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <p>No obligation</p>
+          <div className="damac_contact_checklist_wrapper">
+            <div className="damac_contact_checklist_item">
+              <div className="damac_contact_checklist_icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <p className="damac_contact_checklist_text">No obligation</p>
             </div>
-            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <p>No sales pressure</p>
+            <div className="damac_contact_checklist_item">
+              <div className="damac_contact_checklist_icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <p className="damac_contact_checklist_text">No sales pressure</p>
             </div>
-            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <p>Personalized consultation</p>
+            <div className="damac_contact_checklist_item">
+              <div className="damac_contact_checklist_icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <p className="damac_contact_checklist_text">Personalized consultation</p>
             </div>
-
           </div>
         </div>
 
-        <form className="damac_contact_form" ref={formRef} onSubmit={handleSubmit}>
+        <form className="damac_contact_form" onSubmit={handleSubmit}>
           <div className="damac_contact_form_columns">
             <div className="damac_contact_form_column">
               <div className="damac_contact_form_group">
+                <label htmlFor="contact_full_name">Full Name</label>
                 <input
                   type="text"
                   id="contact_full_name"
@@ -140,6 +100,7 @@ export default function ContactSection() {
               </div>
 
               <div className="damac_contact_form_group">
+                <label htmlFor="contact_email">Email Address</label>
                 <input
                   type="email"
                   id="contact_email"
@@ -155,6 +116,7 @@ export default function ContactSection() {
 
             <div className="damac_contact_form_column">
               <div className="damac_contact_form_group">
+                <label htmlFor="contact_telephone">Phone Number</label>
                 <div className="damac_contact_phone_wrapper">
                   <CountryPhoneDropdown value={phoneCode} onChange={setPhoneCode} />
                   <input
@@ -169,6 +131,7 @@ export default function ContactSection() {
               </div>
 
               <div className="damac_contact_form_group">
+                <label htmlFor="contact_unit_type">Interested Unit Type</label>
                 <select
                   id="contact_unit_type"
                   value={formData.interestedUnitType}
@@ -178,7 +141,7 @@ export default function ContactSection() {
                   required
                   className="damac_contact_select"
                 >
-                  <option value="">Interested Unit Type*</option>
+                  <option value="">Select Unit Type*</option>
                   <option value="2 Bedroom">2 Bedroom</option>
                   <option value="3 Bedroom">3 Bedroom</option>
                   <option value="4 Bedroom">4 Bedroom</option>
@@ -188,7 +151,7 @@ export default function ContactSection() {
             </div>
           </div>
 
-          {/* <div className="damac_contact_consent_group">
+          <div className="damac_contact_consent_group">
             <input
               type="checkbox"
               id="contact_consent"
@@ -197,9 +160,9 @@ export default function ContactSection() {
               required
             />
             <label htmlFor="contact_consent">
-              By clicking this checkbox, you accept that your details are shared with our team to contact you back.*
+              I hereby authorize company representatives to reach out to me via Call, SMS, Email, or WhatsApp to share details about their products and offers, regardless of my DNC/NDNC registration.
             </label>
-          </div> */}
+          </div>
 
           <div className="damac_contact_recaptcha">
             <div className="g-recaptcha" data-sitekey="your-recaptcha-site-key"></div>

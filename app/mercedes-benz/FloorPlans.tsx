@@ -143,17 +143,16 @@ export default function MasterPlan() {
                           height={800}
                           className="damac_master_plan_image"
                         />
-                        <div className="damac_master_plan_overlay">
-                          <button
-                            className="damac_master_plan_overlay_button damac_master_plan_enquire_btn"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              openEnquiryModal();
-                            }}
-                          >
-                            ENQUIRE NOW
-                          </button>
-                        </div>
+                        <button
+                          className="damac_floor_plan_slide_button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setCurrentIndex(index);
+                            openEnquiryModal();
+                          }}
+                        >
+                          ENQUIRE NOW
+                        </button>
                       </div>
                     </div>
                   ))}
@@ -191,6 +190,7 @@ export default function MasterPlan() {
         isOpen={enquiryModalOpen}
         onClose={closeEnquiryModal}
         floorPlanTitle={floorPlans[currentIndex]?.title || "Floor Plan"}
+        buttonText="ENQUIRE NOW"
       />
     </>
   );

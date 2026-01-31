@@ -47,7 +47,7 @@ export default function OverviewSection() {
               </p>
             </div>
             <button className="damac_overview_button" onClick={openEnquiryModal}>
-              ENQUIRE NOW
+              Callback from Binghatti Expert
             </button>
           </div>
         </div>
@@ -57,6 +57,7 @@ export default function OverviewSection() {
         isOpen={isEnquiryModalOpen}
         onClose={closeEnquiryModal}
         floorPlanTitle="Mercedes-Benz Places | Binghatti City"
+        buttonText="Callback from Binghatti Expert"
       />
     </>
   );

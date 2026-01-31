@@ -59,7 +59,7 @@ export default function BannerHeader() {
         <div className="damac_banner_header_container">
           <div className="damac_banner_header_logo">
             <Image
-              src="/images/mercedes-benz/bbnn.webp"
+              src="/images/logo.png"
               alt="Logo"
               width={150}
               height={60}
@@ -70,7 +70,7 @@ export default function BannerHeader() {
           
           <div className="damac_banner_header_right">
             <button className="damac_banner_header_button">
-              GET IN TOUCH
+              INTSTANT CALL BACK
             </button>
             <button 
               className="damac_banner_header_hamburger"
@@ -88,22 +88,6 @@ export default function BannerHeader() {
       {/* Navigation Drawer */}
       <div className={`damac_banner_drawer_overlay ${isMenuOpen ? "open" : ""}`} onClick={closeMenu}>
         <div className="damac_banner_drawer" onClick={(e) => e.stopPropagation()}>
-          <div className="damac_banner_drawer_header">
-            <div className="damac_banner_drawer_contact">
-              <a href="tel:+971505786682">+971 50 578 6682</a>
-              <a href="mailto:Drevendor1@gmail.com">DREVENDOR1@GMAIL.COM</a>
-            </div>
-            <button 
-              className="damac_banner_drawer_close"
-              onClick={closeMenu}
-              aria-label="Close menu"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
-            </button>
-          </div>
 
           <nav className="damac_banner_drawer_nav">
             <ul className="damac_banner_drawer_nav_list">
@@ -133,7 +117,7 @@ export default function BannerHeader() {
 
           <div className="damac_banner_drawer_footer">
             <button className="damac_banner_drawer_button" onClick={(e) => { e.preventDefault(); handleSectionClick("contact"); }}>
-              GET IN TOUCH
+              INTSTANT CALL BACK
             </button>
           </div>
         </div>

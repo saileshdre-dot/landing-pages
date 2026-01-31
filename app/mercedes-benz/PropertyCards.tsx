@@ -156,6 +156,7 @@ export default function PropertyCards() {
         isOpen={enquiryModalOpen}
         onClose={closeEnquiryModal}
         floorPlanTitle={selectedProperty}
+        buttonText="ENQUIRE NOW"
       />
     </>
   );

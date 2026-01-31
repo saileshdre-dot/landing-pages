@@ -10,6 +10,7 @@ import LocationAmenities from "./LocationAmenities";
 import AboutDeveloperSection from "./AboutDeveloperSection";
 import ContactSection from "./ContactSection";
 import Footer from "./Footer";
+import StickyMobileButton from "./StickyMobileButton";
 import './style.css'
 
 export const metadata: Metadata = {
@@ -31,6 +32,7 @@ export default function DamacIslands2Page() {
       <AboutDeveloperSection />
       <ContactSection />
       <Footer />
+      <StickyMobileButton />
     </div>
   );
 }

@@ -9,18 +9,19 @@ interface FloorPlanEnquiryModalProps {
   isOpen: boolean;
   onClose: () => void;
   floorPlanTitle?: string;
+  buttonText?: string;
 }
 
 export default function FloorPlanEnquiryModal({
   isOpen,
   onClose,
   floorPlanTitle,
+  buttonText = "ENQUIRE NOW",
 }: FloorPlanEnquiryModalProps) {
   const [enquiryData, setEnquiryData] = useState({
     name: "",
     email: "",
     phone: "",
-    interestedUnitType: "",
   });
   const [phoneCode, setPhoneCode] = useState("+971");
   const [isChecked, setIsChecked] = useState(true);
@@ -85,7 +86,6 @@ export default function FloorPlanEnquiryModal({
           name: enquiryData.name,
           email: enquiryData.email,
           phone: `${phoneCode}${enquiryData.phone}`,
-          unitType: enquiryData.interestedUnitType,
           message: `Enquiry for: ${floorPlanTitle || "Floor Plan"}`,
           consent: isChecked,
         }),
@@ -130,10 +130,20 @@ export default function FloorPlanEnquiryModal({
 
         <div className="damac_floor_plan_enquiry_modal_content">
           <div className="damac_floor_plan_enquiry_header">
-            <h2 className="damac_floor_plan_enquiry_title">Enquire Now</h2>
-            {floorPlanTitle && (
-              <p className="damac_floor_plan_enquiry_subtitle">{floorPlanTitle}</p>
-            )}
+            <p className="damac_floor_plan_enquiry_subtitle">{buttonText}</p>
+            <div className="damac_floor_plan_enquiry_header_buttons">
+              <a
+                href="https://wa.me/971505786682?text=Hello%2C%20I%20would%20like%20to%20receive%20complete%20details%20for%20this%20floor%20plan%2C%20including%20availability%20and%20the%20best%20pricing."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="damac_floor_plan_enquiry_header_btn damac_floor_plan_enquiry_header_btn_whatsapp"
+                aria-label="WhatsApp"
+              >
+                <Image src="/images/whatsapp.png" alt="WhatsApp" width={20} height={20} />
+                Contact Us Directly
+                
+              </a>
+            </div>
           </div>
 
           <form className="damac_floor_plan_enquiry_form" onSubmit={handleSubmit}>
@@ -180,25 +190,6 @@ export default function FloorPlanEnquiryModal({
               </div>
             </div>
 
-            <div className="damac_floor_plan_enquiry_form_group">
-              <label htmlFor="floor_plan_unit_type">Interested Unit Type</label>
-              <select
-                id="floor_plan_unit_type"
-                value={enquiryData.interestedUnitType}
-                onChange={(e) =>
-                  setEnquiryData({ ...enquiryData, interestedUnitType: e.target.value })
-                }
-                required
-                className="damac_floor_plan_enquiry_select"
-              >
-                <option value="">Select Unit Type*</option>
-                <option value="2 Bedroom">2 Bedroom</option>
-                <option value="3 Bedroom">3 Bedroom</option>
-                <option value="4 Bedroom">4 Bedroom</option>
-                <option value="5 Bedroom">5 Bedroom</option>
-              </select>
-            </div>
-
             <div className="damac_floor_plan_enquiry_checkbox_group">
               <input
                 type="checkbox"
@@ -232,29 +223,6 @@ export default function FloorPlanEnquiryModal({
               )}
             </button>
 
-            <div className="damac_floor_plan_enquiry_contact_options">
-              <p className="damac_floor_plan_enquiry_contact_text">Or contact us directly:</p>
-              <div className="damac_floor_plan_enquiry_contact_buttons">
-                <a
-                  href="tel:+971505786682"
-                  className="damac_floor_plan_enquiry_contact_btn damac_floor_plan_enquiry_contact_btn_call"
-                >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                  </svg>
-                  Call Us
-                </a>
-                <a
-                  href="https://wa.me/971505786682?text=Hello%2C%20I%20would%20like%20to%20receive%20complete%20details%20for%20this%20floor%20plan%2C%20including%20availability%20and%20the%20best%20pricing."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="damac_floor_plan_enquiry_contact_btn damac_floor_plan_enquiry_contact_btn_whatsapp"
-                >
-                  <Image src="/images/whatsapp.png" alt="WhatsApp" width={20} height={20} />
-                  WhatsApp
-                </a>
-              </div>
-            </div>
           </form>
         </div>
       </div>

@@ -13,6 +13,7 @@ if (typeof window !== "undefined") {
 
 export default function DamacIslandsBanner() {
   const [enquiryModalOpen, setEnquiryModalOpen] = useState(false);
+  const [buttonText, setButtonText] = useState("Location Growth Insights");
   const bannerRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
@@ -55,7 +56,8 @@ export default function DamacIslandsBanner() {
     }
   }, []);
 
-  const openEnquiryModal = () => {
+  const openEnquiryModal = (text: string = "Location Growth Insights") => {
+    setButtonText(text);
     setEnquiryModalOpen(true);
     document.body.style.overflow = "hidden";
   };
@@ -105,18 +107,22 @@ export default function DamacIslandsBanner() {
                     <span className="damac_contact_banner_detail_label">Payment Plan:</span>
                     <span className="damac_contact_banner_detail_value">70/30</span>
                   </div>
+                   <div className="damac_contact_banner_detail_item">
+                    <span className="damac_contact_banner_detail_label">Handover:</span>
+                    <span className="damac_contact_banner_detail_value">Q3 2029</span>
+                  </div>
                 </div>
                 
                 <div className="damac_contact_banner_cta_buttons">
                   <button 
                     className="damac_contact_banner_cta_btn damac_contact_banner_cta_btn_filled"
-                    onClick={openEnquiryModal}
+                    onClick={() => openEnquiryModal("Location Growth Insights")}
                   >
-                    Check Availability With Floor Plan
+                    Location Growth Insights
                   </button>
                   <button 
                     className="damac_contact_banner_cta_btn damac_contact_banner_cta_btn_bordered"
-                    onClick={openEnquiryModal}
+                    onClick={() => openEnquiryModal("Get Brochure")}
                   >
                     Get Brochure
                   </button>
@@ -147,6 +153,7 @@ export default function DamacIslandsBanner() {
         isOpen={enquiryModalOpen}
         onClose={closeEnquiryModal}
         floorPlanTitle="Mercedes-Benz Places | Binghatti City"
+        buttonText={buttonText}
       />
     </section>
   );

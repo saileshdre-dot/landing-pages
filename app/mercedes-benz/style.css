@@ -74,18 +74,23 @@ html,body{
 .damac_contact_banner_project_details{
   margin-bottom: 30px;
   padding: 24px;
-  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.1);
-  background: #fff;
+  background: rgb(255 255 255 / 3%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
+
 .damac_contact_banner_detail_item{
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 20px;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 .damac_contact_banner_detail_item:last-child{
   border-bottom: none;
@@ -94,7 +99,7 @@ html,body{
 .damac_contact_banner_detail_label{
   font-size: 14px;
   font-weight: 600;
-  color: #666;
+  color: rgba(255, 255, 255, 0.8);
   font-family: var(--font-gilroy), sans-serif;
   text-transform: capitalize;
   letter-spacing: 0.5px;
@@ -102,7 +107,7 @@ html,body{
 .damac_contact_banner_detail_value{
   font-size: 16px;
   font-weight: 600;
-  color: #121212;
+  color: #fff;
   font-family: var(--font-gilroy), sans-serif;
   text-align: right;
 }
@@ -1263,25 +1268,32 @@ html,body{
   transform: scale(1.05);
   filter: blur(0px);
 }
-.damac_master_plan_overlay{
+.damac_floor_plan_slide_button{
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  padding: 14px 40px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-gilroy), sans-serif;
+  border-radius: 4px;
+  border: none;
+  background: #dcc779;
+  color: #000;
+  box-shadow: 0 4px 15px rgba(220, 199, 121, 0.3);
+  display: inline-block;
 }
-.damac_master_plan_image_container:hover .damac_master_plan_overlay{
-  opacity: 1;
-  pointer-events: all;
+.damac_floor_plan_slide_button:hover{
+  background: #fff;
+  color: #000;
+  transform: translate(-50%, -50%) translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220, 199, 121, 0.5);
 }
 .damac_master_plan_overlay_button{
   padding: 14px 32px;
@@ -1427,6 +1439,35 @@ html,body{
 }
 
 @media (max-width: 768px){
+  .damac_floor_plan_slider{
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+  .damac_floor_plan_slider_container{
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    margin: 0;
+  }
+  .damac_floor_plan_slide{
+    min-width: 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+  .damac_master_plan_image_container{
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    margin: 0;
+  }
+  .damac_master_plan_image{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
   .damac_floor_plan_nav_btn{
     width: 40px;
     height: 40px;
@@ -1440,6 +1481,11 @@ html,body{
   .damac_floor_plan_nav_btn svg{
     width: 20px;
     height: 20px;
+  }
+  .damac_floor_plan_slide_button{
+    padding: 12px 28px;
+    font-size: 12px;
+    letter-spacing: 1px;
   }
 }
 
@@ -1520,13 +1566,54 @@ html,body{
   letter-spacing: 1px;
 }
 .damac_floor_plan_enquiry_subtitle{
-  font-size: 16px;
+  font-size: 20px;
   color: #dcc779;
-  margin: 0;
-  font-family: var(--font-gilroy), sans-serif;
+  margin: 0 0 20px 0;
+  font-family: var(--font-cinzel), serif;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 2px;
+}
+.damac_floor_plan_enquiry_header_buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+.damac_floor_plan_enquiry_header_btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  height: 44px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: var(--font-gilroy), sans-serif;
+  padding-inline: 32px;
+  transition: all 0.3s ease;
+}
+.damac_floor_plan_enquiry_header_btn_whatsapp{
+  background: #73b38a1f;
+  border: 1px solid #5ac581;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.damac_floor_plan_enquiry_header_btn_whatsapp:hover{
+  background: #20BA5A;
+  border-color: #20BA5A;
+  transform: scale(1.1);
+}
+.damac_floor_plan_enquiry_header_btn img{
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }
 .damac_floor_plan_enquiry_form{
   display: flex;
@@ -1824,10 +1911,11 @@ html,body{
 /* Contact Section */
 .damac_contact_section{
   padding: 100px 0;
-  background: #fff;
+  background: linear-gradient(to bottom, #fafafa 0%, #fff 100%);
   position: relative;
   overflow: visible;
   z-index: 1;
+  isolation: isolate;
 }
 .damac_contact_header{
   text-align: center;
@@ -1856,17 +1944,62 @@ html,body{
   font-size: 16px;
   line-height: 1.7;
   color: #666;
-  margin: 0 0 20px 0;
+  margin: 0 0 30px 0;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   font-family: var(--font-gilroy), sans-serif;
+}
+.damac_contact_checklist_wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+.damac_contact_checklist_item{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f0f7f5;
+  border: 1px solid #000;
+  border-radius: 90px;
+  padding: 4px;
+  padding-right: 20px;
+}
+.damac_contact_checklist_icon{
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #c4b068;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.damac_contact_checklist_icon svg{
+  color: #fff;
+  stroke: #fff;
+}
+.damac_contact_checklist_text{
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+  font-family: var(--font-gilroy), sans-serif;
+  font-weight: 500;
+  white-space: nowrap;
 }
 .damac_contact_form{
   max-width: 1000px;
   margin: 0 auto;
   position: relative;
   overflow: visible;
+  background: #fff;
+  padding: 50px;
+  border-radius: 16px;
+  box-shadow: 0 10px 60px rgba(0, 0, 0, 0.08);
+  z-index: 1;
 }
 .damac_contact_form_columns{
   display: grid;
@@ -1892,7 +2025,7 @@ html,body{
 }
 .damac_contact_form_group label{
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   color: #121212;
   font-family: var(--font-gilroy), sans-serif;
   text-transform: uppercase;
@@ -1901,17 +2034,16 @@ html,body{
 .damac_contact_form_group input,
 .damac_contact_form_group textarea,
 .damac_contact_form_group select{
-  background: #fff;
-  border:none;
-  border-radius: 4px;
-  padding: 14px 18px;
+  background: #fafafa;
+  border:1px solid #eee;
+  border-radius: 8px;
+  padding: 16px 20px;
   color: #121212;
   font-size: 15px;
   font-family: var(--font-gilroy), sans-serif;
   transition: all 0.3s ease;
   outline: none;
   width: 100%;
-  box-shadow: 0 0 15px 0 rgba(0,0,0,.1);
 }
 .damac_contact_form_group input::placeholder,
 .damac_contact_form_group textarea::placeholder{
@@ -1920,8 +2052,9 @@ html,body{
 .damac_contact_form_group input:focus,
 .damac_contact_form_group textarea:focus,
 .damac_contact_form_group select:focus{
+  background: #fff;
   border-color: #dcc779;
-  box-shadow: 0 0 0 3px rgba(220, 199, 121, 0.1);
+  box-shadow: 0 0 0 4px rgba(220, 199, 121, 0.15), 0 4px 12px rgba(220, 199, 121, 0.1);
 }
 .damac_contact_select{
   cursor: pointer;
@@ -1943,21 +2076,21 @@ html,body{
   display: flex;
   gap: 10px;
   position: relative;
-  z-index: 1;
+  z-index: 10;
   overflow: visible;
 }
 .damac_contact_phone_wrapper .country_phone_dropdown{
   position: relative;
-  z-index: 999999;
+  z-index: 1000;
 }
 .damac_contact_phone_wrapper input{
   flex: 1;
 }
 .damac_contact_phone_wrapper .country_phone_trigger{
-  background: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  padding: 14px 18px;
+  background: #fafafa;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 18px;
   color: #121212;
   font-size: 15px;
   font-family: var(--font-gilroy), sans-serif;
@@ -1966,8 +2099,9 @@ html,body{
 }
 .damac_contact_phone_wrapper .country_phone_trigger:hover,
 .damac_contact_phone_wrapper .country_phone_trigger:focus{
+  background: #fff;
   border-color: #dcc779;
-  box-shadow: 0 0 0 3px rgba(220, 199, 121, 0.1);
+  box-shadow: 0 0 0 4px rgba(220, 199, 121, 0.15), 0 4px 12px rgba(220, 199, 121, 0.1);
 }
 .damac_contact_phone_wrapper .country_phone_trigger .country_code{
   color: #121212;
@@ -1984,12 +2118,11 @@ html,body{
   position: absolute !important;
   top: calc(100% + 4px) !important;
   left: 0 !important;
-  z-index: 999999 !important;
+  z-index: 10000 !important;
   min-width: 280px !important;
   max-width: 400px !important;
   transform: translateZ(0) !important;
   will-change: transform !important;
-  isolation: isolate !important;
 }
 .damac_contact_phone_wrapper .country_search_wrapper{
   padding: 12px;
@@ -2039,23 +2172,47 @@ html,body{
 }
 .damac_contact_consent_group{
   display: flex;
-  gap: 12px;
-  align-items: center;
+  gap: 0;
+  align-items: flex-start;
   margin-bottom: 25px;
+  cursor: pointer;
 }
 .damac_contact_consent_group input[type="checkbox"]{
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   cursor: pointer;
-  accent-color: #dcc779;
+  accent-color: #4a9b8e;
   flex-shrink: 0;
+  margin: 0;
+  margin-right: 12px;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid #000;
+  position: relative;
+}
+.damac_contact_consent_group input[type="checkbox"]:checked{
+  background: #c4b068;
+  border-color: #000;
+}
+.damac_contact_consent_group input[type="checkbox"]:checked::after{
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1;
 }
 .damac_contact_consent_group label{
   font-size: 13px;
-  color: #666;
+  color: #121212;
   line-height: 1.6;
   font-family: var(--font-gilroy), sans-serif;
   cursor: pointer;
+  flex: 1;
+  margin: 0;
 }
 .damac_contact_recaptcha{
   margin-bottom: 30px;
@@ -2066,11 +2223,12 @@ html,body{
   z-index: 1;
 }
 .damac_contact_recaptcha_text{
-  font-size: 18px;
-  color: #999;
+  font-size: 16px;
+  color: #666;
   font-family: var(--font-gilroy), sans-serif;
-  line-height: 1.5;
+  line-height: 1.6;
   text-align: center;
+  font-weight: 500;
 }
 .damac_contact_recaptcha_text a{
   color: #dcc779;
@@ -2080,28 +2238,25 @@ html,body{
   text-decoration: underline;
 }
 .damac_contact_submit_btn{
-  background: #dcc779;
+  background:#c4b068;
   color: #121212;
   border: none;
-  padding: 16px 48px;
+  padding: 18px 56px;
   font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  border-radius: 4px;
+  border-radius: 8px;
   position: relative;
   z-index: 1;
   cursor: pointer;
-  transition: all 0.3s ease;
   font-family: var(--font-gilroy), sans-serif;
   display: block;
   margin: 0 auto;
   min-width: 200px;
 }
 .damac_contact_submit_btn:hover:not(:disabled){
-  background: #c4b068;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(220, 199, 121, 0.3);
+  background:#dcc779;
 }
 .damac_contact_submit_btn:disabled{
   opacity: 0.6;
@@ -2537,6 +2692,7 @@ html,body{
   }
   .damac_floor_plan_enquiry_modal_content{
     padding: 20px 12px;
+    padding-top: 40px;
   }
   .damac_floor_plan_enquiry_modal_close{
     top: 0px;
@@ -2556,6 +2712,13 @@ html,body{
   }
   .damac_floor_plan_enquiry_form_group input, .damac_floor_plan_enquiry_form_group textarea, .damac_floor_plan_enquiry_form_group select{
     padding: 12px 8px;
+  }
+  .country_phone_trigger{
+    padding-inline: 8px !important;
+    min-width: max-content !important;
+  }
+  .damac_contact_form_group input, .damac_contact_form_group textarea, .damac_contact_form_group select{
+    padding-block: 12px;
   }
 }
 
@@ -2690,6 +2853,7 @@ html,body{
   }
   .damac_footer_qr_code{
     margin-bottom: 25px;
+    justify-content: center;
   }
   .damac_footer_qr_image{
     max-width: 150px;
@@ -2698,9 +2862,11 @@ html,body{
   .damac_footer_verified_text{
     font-size: 22px;
     margin-bottom: 20px;
+    text-align: center;
   }
   .damac_footer_disclaimer{
     font-size: 12px;
+    text-align: center;
   }
   .damac_footer_nav_primary,
   .damac_footer_nav_secondary{
@@ -2840,6 +3006,22 @@ html,body{
   display: flex;
   flex-direction: column;
   gap: 15px;
+}
+.damac_highlights_button {
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: var(--font-gilroy), sans-serif;
+    background: #dcc779;
+    border: 2px solid #dcc779;
+    border-radius: 4px;
+    margin-top: 20px;
+    padding: 14px 40px;
+    transition: all .3s;
+    display: inline-block;
 }
 .damac_highlight_item{
   display: flex;
@@ -3124,7 +3306,12 @@ html,body{
   /* Adjust text wrapper padding */
   .damac_highlights_content .damac_highlights_text_wrapper {
     margin: 0;
-    padding: 40px 30px;
+    padding: 40px 16px;
+  }
+  .damac_highlights_button{
+    padding-inline: 10px;
+    font-size: 13px;
+    width: 100%;
   }
   
   /* Reduce heading size */
@@ -3423,8 +3610,16 @@ html,body{
   .damac_contact_header {
     margin-bottom: 40px;
   }
-  .damac_contact_header .grid_item_wrapper{
+  .damac_contact_checklist_wrapper{
     flex-direction: column;
+    gap: 10px;
+  }
+  .damac_contact_checklist_item{
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .damac_contact_checklist_text{
+    white-space: normal;
   }
   
   /* Reduce heading size */
@@ -3438,6 +3633,10 @@ html,body{
   }
   
   /* Stack form columns vertically */
+  .damac_contact_form {
+    padding: 30px 20px;
+  }
+  
   .damac_contact_form_columns {
     grid-template-columns: 1fr;
     gap: 25px;
@@ -3450,8 +3649,9 @@ html,body{
   
   /* Reduce submit button padding */
   .damac_contact_submit_btn {
-    padding: 14px 32px;
+    padding: 16px 40px;
     font-size: 14px;
+    width: 100%;
   }
 }
 
@@ -3506,11 +3706,15 @@ html,body{
   /* Adjust links spacing */
   .damac_footer_links_list {
     gap: 15px 20px;
+    justify-content: center;
   }
   
   /* Reduce link text size */
   .damac_footer_links_list li a {
     font-size: 12px;
+  }
+  .damac_footer_section{
+    margin-top: 40px;
   }
 }
 
@@ -3594,4 +3798,231 @@ html,body{
   .damac_reverse_body p {
     font-size: 14px;
   }
+}
+
+/* Sticky Mobile Button - Hidden on Desktop */
+.damac_sticky_mobile_button_wrapper{
+  display: none;
+}
+
+  .damac_mobile_guide_button{
+    display: none;
+}
+
+@media (max-width: 768px){
+  .damac_sticky_mobile_button_wrapper{
+    display: block;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 9999;
+    padding: 0;
+    pointer-events: none;
+  }
+  
+  .damac_mobile_guide_button{
+    display: block;
+    position: fixed;
+    z-index: 10;
+    bottom: 60px;
+    right: 40px;
+    cursor: pointer;
+    pointer-events: all;
+  }
+  
+  .damac_mobile_guide_button:before {
+    background-color: #000;
+    opacity: .25;
+    z-index: 0;
+    border-radius: 999px;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: translate3d(2px, 2px, 0);
+    width: 100%;
+  }
+  
+  .damac_mobile_guide_button:after {
+    background-image: url(/images/mercedes-benz/texture.png);
+    background-size: cover;
+    border: 1px solid #000;
+    z-index: 0;
+    border-radius: 999px;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: translate3d(2px, 2px, 0);
+    width: 100%;
+  }
+  
+  .damac_mobile_guide_button_content {
+    z-index: 3;
+    position: relative;
+    background-color: #c4b068;
+    transition: transform .5s cubic-bezier(.19, 1, .22, 1);
+    border-radius: 9999px;
+    overflow: hidden;
+    width: 120px;
+    height: 120px;
+ box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+  
+  .damac_mobile_guide_button .damac_mobile_guide_button_text {
+    left: 0;
+    right: 0;
+    position: absolute;
+    bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+  
+  .damac_mobile_guide_button .damac_mobile_guide_button_text img,
+  .damac_mobile_guide_button .damac_mobile_guide_button_text .damac_mobile_guide_button_text_fallback {
+    height: auto;
+    width: 90%;
+    z-index: 10;
+    object-fit: contain;
+  }
+  
+  .damac_mobile_guide_button .damac_mobile_guide_button_text .damac_mobile_guide_button_text_fallback {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    color: #000;
+    line-height: 1.2;
+    font-family: var(--font-gilroy), sans-serif;
+    letter-spacing: 0.5px;
+    padding: 0 8px;
+  }
+  
+  .damac_mobile_guide_button .damac_mobile_guide_button_hand {
+    left: 50%;
+    transform: translateX(-50%);
+    right: 0;
+    position: absolute;
+    top: 0;
+    z-index: 5;
+  }
+  
+  .damac_mobile_guide_button .damac_mobile_guide_button_hand img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    animation: damac_moveUpDown 2s ease-in-out infinite;
+  }
+  
+  @keyframes damac_moveUpDown {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .damac_mobile_guide_button {
+      bottom: 40px;
+      right: 20px;
+    }
+    
+    .damac_mobile_guide_button_content {
+      width: 80px;
+      height: 80px;
+    }
+    
+    .damac_mobile_guide_button .damac_mobile_guide_button_text .damac_mobile_guide_button_text_fallback {
+      font-size: 9px;
+      padding: 0 6px;
+    }
+    
+    .damac_sticky_mobile_popover {
+      bottom: 130px;
+      right: 20px;
+      max-width: 180px;
+    }
+  }
+  
+  .damac_sticky_mobile_popover{
+    position: fixed;
+    right: 40px;
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(220, 199, 121, 0.3);
+    border-radius: 6px;
+    padding: 6px 28px 6px 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    pointer-events: all;
+    max-width: 200px;
+    animation: slideUpPopover 0.4s ease-out;
+    z-index: 11;
+  }
+  
+  @keyframes slideUpPopover {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .damac_sticky_mobile_popover_close{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+  }
+  
+  .damac_sticky_mobile_popover_close:hover{
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+  
+  .damac_sticky_mobile_popover_close svg{
+    width: 14px;
+    height: 14px;
+  }
+  
+  .damac_sticky_mobile_popover_text{
+    font-size: 13px;
+    color: #fff;
+    margin: 0;
+    font-family: var(--font-gilroy), sans-serif;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: center;
+  }
+  
+  .damac_sticky_mobile_popover_arrow{
+    position: absolute;
+    bottom: -8px;
+    right: 20px;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid rgba(26, 26, 26, 0.95);
+  }
+  
 }

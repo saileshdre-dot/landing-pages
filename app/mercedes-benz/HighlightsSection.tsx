@@ -17,7 +17,6 @@ const highlights = [
   "Iconic skyline and city views",
   "High-demand urban location",
   "World-class lifestyle amenities",
-  "Strong rental & capital appreciation potential",
   "Limited-edition luxury living",
   "Ideal for investors & end users"
 ];
@@ -50,6 +49,7 @@ export default function HighlightsSection() {
                   </div>
                 ))}
               </div>
+              <button className="damac_highlights_button">Callback from Binghatti Expert</button>
             </div>
           </div>
         </div>
