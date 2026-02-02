@@ -68,9 +68,7 @@ function HomePageContent() {
                     <span>Apartment</span>
                   </div>
                   <div className="feature-item">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                    </svg>
+                    <span style={{ fontSize: "16px", fontWeight: "600" }}>د.إ</span>
                     <span>2.4M AED</span>
                   </div>
                   <div className="feature-item">
@@ -87,7 +85,7 @@ function HomePageContent() {
                       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                       <circle cx="12" cy="10" r="3"/>
                     </svg>
-                    <span>6KM Waterfront</span>
+                    <span>Dubai Islands</span>
                   </div>
                 </div>
 
@@ -144,9 +142,7 @@ function HomePageContent() {
                     <span>Apartment</span>
                   </div>
                   <div className="feature-item">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                    </svg>
+                    <span style={{ fontSize: "16px", fontWeight: "600" }}>د.إ</span>
                     <span>1.6M AED</span>
                   </div>
                   <div className="feature-item">
