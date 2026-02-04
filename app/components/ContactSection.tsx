@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import CountryPhoneDropdown from "./CountryPhoneDropdown";
+import { detectCountryCode } from "../utils/countryDetection";
 
 export default function ContactSection() {
   const [sectionEnquiryData, setSectionEnquiryData] = useState({
@@ -10,9 +11,18 @@ export default function ContactSection() {
     email: "",
     phone: "",
   });
-  const [sectionEnquiryPhoneCode, setSectionEnquiryPhoneCode] = useState("+971");
+  const [sectionEnquiryPhoneCode, setSectionEnquiryPhoneCode] = useState<string | null>(null);
   const [isSectionEnquiryChecked, setIsSectionEnquiryChecked] = useState(true);
   const [isSectionEnquirySubmitting, setIsSectionEnquirySubmitting] = useState(false);
+
+  // Auto-detect country on mount
+  useEffect(() => {
+    const detectCountry = async () => {
+      const code = await detectCountryCode();
+      setSectionEnquiryPhoneCode(code);
+    };
+    detectCountry();
+  }, []);
 
   const handlePhoneChange = (value: string) => {
     const digitsOnly = value.replace(/\D/g, "");
@@ -147,7 +157,7 @@ export default function ContactSection() {
 
                 <div className="form_group phone_input_wrapper">
                   <CountryPhoneDropdown
-                    value={sectionEnquiryPhoneCode}
+                    value={sectionEnquiryPhoneCode || "+971"}
                     onChange={setSectionEnquiryPhoneCode}
                   />
                   <input

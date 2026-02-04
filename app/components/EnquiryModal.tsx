@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import CountryPhoneDropdown from "./CountryPhoneDropdown";
+import { detectCountryCode } from "../utils/countryDetection";
 
 interface EnquiryModalProps {
   isOpen?: boolean;
@@ -16,13 +17,22 @@ export default function EnquiryModal({ isOpen: controlledIsOpen, onClose: contro
     email: "",
     phone: "",
   });
-  const [enquiryPhoneCode, setEnquiryPhoneCode] = useState("+971");
+  const [enquiryPhoneCode, setEnquiryPhoneCode] = useState<string | null>(null);
   const [isEnquiryChecked, setIsEnquiryChecked] = useState(true);
   const [isEnquirySubmitting, setIsEnquirySubmitting] = useState(false);
 
   // Use controlled or internal state
   const isOpen = controlledIsOpen !== undefined ? controlledIsOpen : internalIsOpen;
   const onClose = controlledOnClose || (() => setInternalIsOpen(false));
+
+  // Auto-detect country on mount
+  useEffect(() => {
+    const detectCountry = async () => {
+      const code = await detectCountryCode();
+      setEnquiryPhoneCode(code);
+    };
+    detectCountry();
+  }, []);
 
   // Auto-open after 5 seconds if not controlled
   useEffect(() => {
@@ -162,7 +172,7 @@ export default function EnquiryModal({ isOpen: controlledIsOpen, onClose: contro
 
             <div className="form_group phone_input_wrapper">
               <CountryPhoneDropdown
-                value={enquiryPhoneCode}
+                value={enquiryPhoneCode || "+971"}
                 onChange={setEnquiryPhoneCode}
               />
               <input

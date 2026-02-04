@@ -1,15 +1,25 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CountryPhoneDropdown from "./CountryPhoneDropdown";
 import { useFormModal } from "./FormModalContext";
+import { detectCountryCode } from "../utils/countryDetection";
 
 export default function FormModal() {
   const { isFormModalOpen, modalType, closeFormModal } = useFormModal();
   const [formData, setFormData] = useState({ name: "", whatsapp: "" });
-  const [formPhoneCode, setFormPhoneCode] = useState("+971");
+  const [formPhoneCode, setFormPhoneCode] = useState<string | null>(null);
   const [isChecked, setIsChecked] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Auto-detect country on mount
+  useEffect(() => {
+    const detectCountry = async () => {
+      const code = await detectCountryCode();
+      setFormPhoneCode(code);
+    };
+    detectCountry();
+  }, []);
 
   const handleWhatsAppChange = (value: string) => {
     const digitsOnly = value.replace(/\D/g, "");
@@ -127,7 +137,7 @@ export default function FormModal() {
 
             <div className="form_group phone_input_wrapper">
               <CountryPhoneDropdown
-                value={formPhoneCode}
+                value={formPhoneCode || "+971"}
                 onChange={setFormPhoneCode}
               />
               <input
